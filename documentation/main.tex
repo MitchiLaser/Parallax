@@ -1,0 +1,24 @@
+\documentclass{include/documentclass}
+
+
+% some important information for the title page
+\subject{Technical Design Report}
+\title{Parallax}
+\subtitle{A simple data acquisition system}
+\author{Michael Hohenstein}
+\date{\today}
+
+
+\begin{document}
+	% title page
+	\titlepage{
+		\maketitle
+	}
+	\clearpage
+	\tableofcontents
+	\listoftodos
+	\clearpage
+
+	% main content
+	\include{./chap/hardware/chapter.tex}
+\end{document}
