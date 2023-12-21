@@ -7,13 +7,13 @@ It is simple to see that the current flowing in this circuit is the same for bot
 	I = \frac{U}{R} = \frac{V_{cc}}{R_1 + R_2}\,.
 \end{equation*}
 We also know that the voltage drop $U_1$ across $R_1$ and the voltage drop $U_2$ across $R_2$ sum up to the supply voltage: $U_1 + U_2 = V_{cc}\,$. The voltage drop across $R_2$ can be calculated using Ohms law again because we know the current and the resistance:
-\begin{equation}
+\begin{equation*}
 	U_2 = R \cdot I = V_{cc} \cdot \frac{R_2}{R_1 + R_2}\,.
-\end{equation}
+\end{equation*}
 A similar behavior can be seen for $R_1$:
-\begin{equation}
+\begin{equation*}
 	U_1 = R \cdot I = V_{cc} \cdot \frac{R_1}{R_1 + R_2}\,.
-\end{equation}
+\end{equation*}
 
 This shows us that we can calculate the voltage $U_o = U_2 = V_{cc} - U_1$ between the resistors. It is independent from the total current and only depending on the ratio of the two resistors. It would not make a difference if we use $R_1 = \SI{10}{K\Omega}, R_2 = \SI{2,2}{K\Omega}$ or $R_1 = \SI{10}{\Omega}, R_2 = \SI{2,2}{\Omega}$, the result would be the same.
 
@@ -34,7 +34,13 @@ This shows us that we can calculate the voltage $U_o = U_2 = V_{cc} - U_1$ betwe
 \end{figure}
 
 
-We can use this circuit to reduce a voltage but its usability as a voltage source is limited. This can be shown in \cref{fig:loaded-voltage-divider} by adding a load resistor $R_L$. Now the total resistance of the parallel resistors $R_2$ and $R_L$ calculates to
+The characteristic equation to describe a voltage divider can be seen in \cref{equ:resistive-voltage-divider}:
+\begin{equation}
+	\frac{U_1}{U_2} = \frac{R_1}{R_2}\,.
+	\label{equ:resistive-voltage-divider}
+\end{equation}
+
+We can use this circuit to reduce a voltage but its usability as a voltage source is limited. This can be shown in \cref{fig:loaded-voltage-divider} by adding a load, in this case a resistor $R_L$. Now the total resistance of the parallel resistors $R_2$ and $R_L$ calculates to
 \begin{equation*}
 	R_x = \frac{1}{\frac{1}{R_2} + \frac{1}{R_L}}
 \end{equation*}
@@ -54,7 +60,7 @@ and the result of this is smaller than $R_2$ and $R_L$. The load changes the vol
 			to[short, -*] ++ (-1,0)
 		;
 	\end{tikzpicture}
-	\caption{A loaded voltage divider}
+	\caption{A voltage divider with load resistance}
 	\label{fig:loaded-voltage-divider}
 \end{figure}
 
@@ -62,4 +68,52 @@ A voltage divider can only be used as a voltage source if there is no load attac
 
 \subsection{The capacitive voltage divider}
 
-In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. \todo[inline]{maybe show a picture of a high frequency signal which is distorted by a voltage divider}. At high frequencies the voltage divider can also be build with the use of capacitors instead of resistors.
+In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. \todo[inline]{maybe show a picture of a high frequency signal which is distorted by a voltage divider}At high frequencies the voltage divider can also be build with the use of capacitors instead of resistors.
+
+For a DC voltage a capacitor is an impervious barrier but for an AC voltage the capacitor behaves like an electrical conductor which induces a phase shift of $\SI{90}{\degree}$. If we arrange two capacitors as seen in \cref{fig:capacitive-voltage-divider} and have an alternating voltage $\sim V_{cc}$ we can observe an similar behavior as with the resistor based voltage divider in \cref{fig:simple-voltage-divider}.
+
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[ground] {}
+			to[C, l=$C_2$, -*] ++ (0,2) coordinate (A)
+			to[short, -o] ++ (1,0)
+			node[auto, anchor=west] {$U_o$}
+			(A) to[C, l=$C_1$] ++ (0,2)
+			node[vcc] {$\sim V_{cc}$}
+		;
+	\end{tikzpicture}
+	\caption{A capacitive voltage divider}
+	\label{fig:capacitive-voltage-divider}
+\end{figure}
+
+
+In this circuit the overall flowing charge $Q$ through the capacitors is preserved:
+\begin{equation*}
+	Q = C \cdot U = C_1 \cdot U_1 = C_2 \cdot U_2\,
+\end{equation*}
+where $U_1$ and $U_2$ are the voltage drops across the capacitors $U_1$ and $U_2$. With the overall capacity of two capacitors in series:
+\begin{equation}
+	C_x = \frac{1}{\frac{1}{C_1} + \frac{1}{C_2}} = \frac{C_1 \cdot C_2}{C_1 + C_2}
+\end{equation}
+and the use of $Q = C_x \cdot V_{cc} = C_2 \cdot U_2$ the voltage $U_2$ drop across $C_2$ can be calculated:
+\begin{equation}
+	U_2 = U_0 \frac{Q}{C} =  \frac{V_{cc}}{C_2} \cdot C_x = \frac{V_{cc}}{C_2} \cdot \frac{C_1 \cdot C_2}{C_1 + C_2} = V_{cc} \cdot \frac{C_1}{C_1 + C_2}
+\end{equation}
+From symmetric reasons the equation for $U_1$ looks similar:
+\begin{equation}
+	U_1 =  V_{cc} \cdot \frac{C_1}{C_1 + C_2}
+\end{equation}
+
+From this the characteristic equation of the capacitive voltage divider is \cref{equ:capacitive-voltage-divider}
+
+\begin{equation}
+	\frac{U_1}{U_2} = \frac{ \frac{C_2}{C_1 + C_2}  }{ \frac{C_1}{C_1 + C_2}  } = \frac{C_2}{C_1}\,.
+	\label{equ:capacitive-voltage-divider}
+\end{equation}
+
+With this knowledge we can build a voltage divider for AC signals but it cannot be used for DC voltages.
+
+\subsection{Frequency compensated attenuator}
+\todo[inline]{Continue and also describe why it is named attenuator form here on}
