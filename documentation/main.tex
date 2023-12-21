@@ -15,9 +15,16 @@
 		\maketitle
 	}
 	\clearpage
+
+	% set page numbering to roman for the contents list
+	\pagenumbering{roman}
 	\tableofcontents
 	\listoftodos
 	\clearpage
+
+	% reset page counter so the first chapter is on page 1
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
 
 	% main content
 	\include{./chap/hardware/chapter.tex}
