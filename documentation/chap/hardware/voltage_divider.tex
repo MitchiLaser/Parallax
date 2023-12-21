@@ -89,22 +89,22 @@ For a DC voltage a capacitor is an impervious barrier but for an AC voltage the 
 \end{figure}
 
 
-In this circuit the overall flowing charge $Q$ through the capacitors is preserved:
+In this circuit the overall charge $Q$ through the capacitors is preserved:
 \begin{equation*}
 	Q = C \cdot U = C_1 \cdot U_1 = C_2 \cdot U_2\,
 \end{equation*}
 where $U_1$ and $U_2$ are the voltage drops across the capacitors $U_1$ and $U_2$. With the overall capacity of two capacitors in series:
-\begin{equation}
+\begin{equation*}
 	C_x = \frac{1}{\frac{1}{C_1} + \frac{1}{C_2}} = \frac{C_1 \cdot C_2}{C_1 + C_2}
-\end{equation}
+\end{equation*}
 and the use of $Q = C_x \cdot V_{cc} = C_2 \cdot U_2$ the voltage $U_2$ drop across $C_2$ can be calculated:
-\begin{equation}
+\begin{equation*}
 	U_2 = U_0 \frac{Q}{C} =  \frac{V_{cc}}{C_2} \cdot C_x = \frac{V_{cc}}{C_2} \cdot \frac{C_1 \cdot C_2}{C_1 + C_2} = V_{cc} \cdot \frac{C_1}{C_1 + C_2}
-\end{equation}
+\end{equation*}
 From symmetric reasons the equation for $U_1$ looks similar:
-\begin{equation}
+\begin{equation*}
 	U_1 =  V_{cc} \cdot \frac{C_1}{C_1 + C_2}
-\end{equation}
+\end{equation*}
 
 From this the characteristic equation of the capacitive voltage divider is \cref{equ:capacitive-voltage-divider}
 
@@ -113,7 +113,10 @@ From this the characteristic equation of the capacitive voltage divider is \cref
 	\label{equ:capacitive-voltage-divider}
 \end{equation}
 
-With this knowledge we can build a voltage divider for AC signals but it cannot be used for DC voltages.
+With this knowledge we can build a voltage divider for AC signals but it cannot be used for DC voltages. Like a resistive voltage divider a capacitive one also only works when there is no load attached. A load can also be seen as an additional capacitor, similar to \cref{fig:loaded-voltage-divider}, which changes the capacitance ration and affects the voltage drop.
 
 \subsection{Frequency compensated attenuator}
+
+A resistive attenuator can only be used properly with DC voltages or AC voltages at low frequencies and a capacitive attenuator can be used with alternating voltages at high frequencies but is unusable for DC voltages. The solution to achieve both within a single circuit is called a "Frequency compensated attenuator" (\textit{attenuator} is just another name for a voltage divider).
+
 \todo[inline]{Continue and also describe why it is named attenuator form here on}
