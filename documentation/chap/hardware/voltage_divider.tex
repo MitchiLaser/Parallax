@@ -64,11 +64,21 @@ and the result of this is smaller than $R_2$ and $R_L$. The load changes the vol
 	\label{fig:loaded-voltage-divider}
 \end{figure}
 
-A voltage divider can only be used as a voltage source if there is no load attached to it. This means we cannot use it to drive an electric device but we will later see that there is a possibility to avoid this issue. Right now we only have discussed what happens when we have a fixed voltage $V_{cc}$ driving this circuit. With an alternating voltage $U = U_0 \cdot \sin(\omega \cdot t)$ we will get into trouble.
+A voltage divider can only be used as a voltage source if there is no load attached to it. This means we cannot use it to drive an electric device but we will later see that there is a possibility to avoid this issue.
+
+Right now we only have discussed what happens when we have a fixed voltage $V_{cc}$ driving this circuit. With an AC supply $U = U_0 \cdot \sin(\omega \cdot t)$ the voltage divider still works the same because only $V_{cc}$ is time dependant, the resistors are constant and independent from the voltage or the frequency of $V_{cc}$ and therefore it should work the same with AC and DC current.
+
+Hold on! The last paragraph was partially a lie. In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. If we want to measure the voltage $U_o$ then our measurement device (which would be an ADC) has a large input resistance and a small input capacity. The large input resistance is good because ifs effect on the voltage divider can be neglected\footnote{You wanna know why? Calculate it with a 1:1 voltage divider made out of $\SI{1}{K\Omega}$ resistors and load resistor $R_L = \SI{10}{M\Omega}$.} but the small input capacitance would introduce a new side effect on this circuit. \cref{fig:voltage-divider-distortion} is a simulation of a square signal which will be distorted by the small input capacitance ($C_1 = \SI{15}{pF}$) of a measurement device (The large input resistance $R_3 = \SI{1}{M\Omega}$ was also taken into account in this simulation). Before we discuss how to deal with this side effect we will take a look on a voltage divider which is build especially for AC currents.
+
+\begin{figure}[htb]
+		\centering
+		\includegraphics[width=0.8\textwidth]{voltage-divider-distortion-simulation.png}
+		\caption{A square wave signal which is being disturbed by the input capacitance of an ADC}
+		\label{fig:voltage-divider-distortion}
+\end{figure}
+
 
 \subsection{The capacitive voltage divider}
-
-In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. \todo[inline]{maybe show a picture of a high frequency signal which is distorted by a voltage divider}At high frequencies the voltage divider can also be build with the use of capacitors instead of resistors.
 
 For a DC voltage a capacitor is an impervious barrier but for an AC voltage the capacitor behaves like an electrical conductor which induces a phase shift of $\SI{90}{\degree}$. If we arrange two capacitors as seen in \cref{fig:capacitive-voltage-divider} and have an alternating voltage $\sim V_{cc}$ we can observe an similar behavior as with the resistor based voltage divider in \cref{fig:simple-voltage-divider}.
 
@@ -109,14 +119,52 @@ From symmetric reasons the equation for $U_1$ looks similar:
 From this the characteristic equation of the capacitive voltage divider is \cref{equ:capacitive-voltage-divider}
 
 \begin{equation}
-	\frac{U_1}{U_2} = \frac{ \frac{C_2}{C_1 + C_2}  }{ \frac{C_1}{C_1 + C_2}  } = \frac{C_2}{C_1}\,.
+	\frac{U_1}{U_2} = \frac{C_2}{C_1}\,.
 	\label{equ:capacitive-voltage-divider}
 \end{equation}
 
 With this knowledge we can build a voltage divider for AC signals but it cannot be used for DC voltages. Like a resistive voltage divider a capacitive one also only works when there is no load attached. A load can also be seen as an additional capacitor, similar to \cref{fig:loaded-voltage-divider}, which changes the capacitance ration and affects the voltage drop.
 
+
 \subsection{Frequency compensated attenuator}
 
 A resistive attenuator can only be used properly with DC voltages or AC voltages at low frequencies and a capacitive attenuator can be used with alternating voltages at high frequencies but is unusable for DC voltages. The solution to achieve both within a single circuit is called a "Frequency compensated attenuator" (\textit{attenuator} is just another name for a voltage divider).
 
-\todo[inline]{Continue and also describe why it is named attenuator form here on}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[ground] {}
+			to[short, *-] ++ (-2,0)
+			to[resistor, l=$R_2$] ++ (0,2) coordinate (A)
+			to[resistor, l=$R_1$, *-] ++ (0,2)
+			-- ++ (2,0)
+			node[vcc] {$V_{cc}$}
+			to[short, *-] ++ (0,0)
+			to[C, l=$C_1$, -*] ++ (0,-2) coordinate (B)
+			to[C, l=$C_2$, -*] ++ (0,-2)
+			-- ++ (-1,0)
+			(B) ++ (2,0) coordinate (C)
+			to[vC, l=$C_T$, *-] ++ (0,-2)
+			to[short, -*] ++ (-2,0)
+			(A) to[short] (B)
+			to[short] (C)
+			to[short, -o] ++ (1,0)
+			node[auto, anchor=west] {$U_o$}
+		;
+	\end{tikzpicture}
+	\caption{A frequency compensated attenuator with an adjustable capacitor for fine tuning}
+	\label{fig:frequency-compensated-attenuator}
+\end{figure}
+
+The attenuator in \cref{fig:frequency-compensated-attenuator} is just a combination of a resistive voltage divider for DC signals and a capacitive voltage divider for AC signals in parallel. By using resistors which are way smaller than the load resistance of a measurement device the load would not affect this attenuator. The same thing happens when the capacitors are chosen large enough: a small load capacity would not effect the attenuator. There is also a trimmer capacitor which will be discussed later.
+
+Let's take a look at the behaviour of this voltage divider first. We know the descriptive formulas of the previously discussed voltage dividers:
+\begin{equation*}
+	\frac{U_1}{U_2} = \frac{R_1}{R_2} = \frac{C_2}{C_1}
+\end{equation*}
+This means that a frequency compensated attenuator needs to fulfill the following requirements:
+\begin{equation}
+	R_1 \cdot C_1 = R_2 \cdot C_2\,.
+\end{equation}
+This equation is essential for choosing the right components. One missing detail lies in the trimmer capacitor. Its only task is to compensate computational mishaps or other side effects which have not been taken into account. This trimmer capacitor can be set to its proper value by a calibration process. To do so the attenuator needs to be driven by a square signal. During a recording of $U_o$ the trimmer capacitor needs to be adjusted until the results show a pure square signal with no distortions.
