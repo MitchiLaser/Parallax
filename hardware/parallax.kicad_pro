@@ -466,7 +466,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "/home/michael/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -479,6 +479,10 @@
     [
       "9be75e04-ffa7-400b-a6f6-98cbc4c2c88c",
       ""
+    ],
+    [
+      "89a1e200-d02e-41b4-8035-131adfe663f2",
+      "Analog Front-End"
     ]
   ],
   "text_variables": {}
