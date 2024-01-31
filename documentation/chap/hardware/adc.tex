@@ -1,13 +1,13 @@
 \section{Measuring analog voltages}
 
-The core component of the data acquisition is the \href{https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html}{PR2040 Microcontroller} which includes built-in Analog-to-Digital Converters(ADC). These ADCs convert electronic voltages ranging from Ground ($\SI{0}{V}$) to a reference voltage $U_{ref}$ into a digital number defined by the resolution which is depicted in bits. The resolution for all the ADCs in the RP2040 IC is set to 12 bits, meaning that the digital result from an ADC is in between $0$ and $2^{12} = 4096$. Within this conversion the mapping from the analog input voltage to a corresponding digital number should be proportional but has small uncertainties which are defined by the resolution as seen in \cref{fig:ADC-Curve}. This picture also clearly shows that a value acquired by an ADC has an uncertainty of half the voltage to which the least significant bit (LSB) corresponds. This can be calculated as:
+The core component of the data acquisition is the \href{https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html}{PR2040 Microcontroller} which includes built-in Analog-to-Digital Converters(ADC)\footnote{\href{http://pico-adc.markomo.me/}{This project} is a collection of measurements and analysis in order to document and specify the details of the ADCs of the RP2040 Microcontroller}. These ADCs convert electronic voltages ranging from Ground ($\SI{0}{V}$) to a reference voltage $U_{ref}$ into a digital number defined by the resolution which is depicted in bits. The resolution for all the ADCs in the RP2040 IC is set to 12 bits, meaning that the digital result from an ADC is in between $0$ and $2^{12} = 4096$. Within this conversion the mapping from the analog input voltage to a corresponding digital number should be proportional but has small uncertainties which are defined by the resolution as seen in \cref{fig:ADC-Curve}. This picture also clearly shows that a value acquired by an ADC has an uncertainty of half the voltage to which the least significant bit (LSB) corresponds. This can be calculated as:
 \begin{equation*}
 	\sigma = \pm{} U_{ref} \cdot \frac{1}{2} \cdot \frac{1}{2^{resolution}} = \pm{} U_{ref} \cdot 2^{-(resolution + 1)}\,.
 \end{equation*}
 
 \begin{figure}[htb]
 		\centering
-		\includegraphics[width=0.4\textwidth]{./fig/ADC-conversion-curve-export.pdf}
+		\includegraphics[width=0.6\textwidth]{./fig/ADC-conversion-curve-export.pdf}
 		\caption{Conversion from an analog voltage do a digital number with an ADC}
 		\label{fig:ADC-Curve}
 \end{figure}

@@ -68,14 +68,14 @@ A voltage divider can only be used as a voltage source if there is no load attac
 
 Right now we only have discussed what happens when we have a fixed voltage $V_{cc}$ driving this circuit. With an AC supply $U = U_0 \cdot \sin(\omega \cdot t)$ the voltage divider still works the same because only $V_{cc}$ is time dependant, the resistors are constant and independent from the voltage or the frequency of $V_{cc}$ and therefore it should work the same with AC and DC current.
 
-Hold on! The last paragraph was partially a lie. In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. If we want to measure the voltage $U_o$ then our measurement device (which would be an ADC) has a large input resistance and a small input capacity. The large input resistance is good because ifs effect on the voltage divider can be neglected\footnote{You wanna know why? Calculate it with a 1:1 voltage divider made out of $\SI{1}{K\Omega}$ resistors and load resistor $R_L = \SI{10}{M\Omega}$.} but the small input capacitance would introduce a new side effect on this circuit. \cref{fig:voltage-divider-distortion} is a simulation of a square signal which will be distorted by the small input capacitance ($C_1 = \SI{15}{pF}$) of a measurement device (The large input resistance $R_3 = \SI{1}{M\Omega}$ was also taken into account in this simulation). Before we discuss how to deal with this side effect we will take a look on a voltage divider which is build especially for AC currents.
-
 \begin{figure}[htb]
 		\centering
 		\includegraphics[width=0.8\textwidth]{voltage-divider-distortion-simulation.png}
 		\caption{A square wave signal which is being disturbed by the input capacitance of an ADC}
 		\label{fig:voltage-divider-distortion}
 \end{figure}
+
+Hold on! The last paragraph was partially a lie. In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. If we want to measure the voltage $U_o$ then our measurement device (which would be an ADC) has a large input resistance and a small input capacity. The large input resistance is good because ifs effect on the voltage divider can be neglected\footnote{You wanna know why? Calculate the reduction of an input voltage for a 1:1 voltage divider made out of $\SI{1}{K\Omega}$ resistors with and without an $R_L = \SI{10}{M\Omega}$ load.} but the small input capacitance would introduce a new side effect on this circuit. \cref{fig:voltage-divider-distortion} is a simulation of a square signal which will be distorted by the small input capacitance ($C_1 = \SI{15}{pF}$) of a measurement device (The large input resistance $R_3 = \SI{1}{M\Omega}$ was also taken into account in this simulation). Before we discuss how to deal with this side effect we will take a look on a voltage divider which is build especially for AC currents.
 
 
 \subsection{The capacitive voltage divider}
@@ -166,5 +166,73 @@ Let's take a look at the behaviour of this voltage divider first. We know the de
 This means that a frequency compensated attenuator needs to fulfill the following requirements:
 \begin{equation}
 	R_1 \cdot C_1 = R_2 \cdot C_2\,.
+	\label{equ:frequency-compensated-attenuator}
 \end{equation}
-This equation is essential for choosing the right components. One missing detail lies in the trimmer capacitor. Its only task is to compensate computational mishaps or other side effects which have not been taken into account. This trimmer capacitor can be set to its proper value in a calibration process. To do so the attenuator needs to be driven by a square signal. During a recording of $U_o$ the trimmer capacitor needs to be adjusted until the results show a pure square signal with no distortions.
+This equation is essential for choosing the right components. One missing detail lies in the trimmer capacitor. Its only task is to compensate uncertainties of the components or other side effects which have not been taken into account. This trimmer capacitor can be set to its proper value in a calibration process until \cref{equ:frequency-compensated-attenuator} is satisfied. To do so the attenuator needs to be driven by a square signal. During a recording of $U_o$ the trimmer capacitor needs to be adjusted until the results show a pure square signal with no distortions.
+
+
+\subsection{Adding voltages}
+
+In \cref{fig:simple-voltage-divider} the voltage divider was constructed in a way where the second resistor was connected to ground. This makes it easy to calculate $U_o$ which is the voltage drop across $R_2$ added to the electrical potential at the other side of the resistor: $U_o = U_{Gnd} + U_2\,$. Since the grounding is just a fixed value for a potential this could also be set to an arbitrary value above or below Ground and the voltage divider would still work on the potential difference across the two resistors. We are going to abuse this effect to shape the output signal of the attenuator.
+
+An ADC can only convert voltages from $\SI{0}{V}$ up to a reference voltage $U_{ref}$. To accept higher voltages than $U_{ref}$ an attenuator can be used to reduce the voltage by a factor which is specified by the resistor ratio. For voltages below the Ground of the ADC the only option is to shift the voltage up by adding a DC offset. Replacing the Ground potential at the attenuator with a Voltage source makes this voltage addition possible.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[vcc] {$V_+$}
+			-- ++ (-1,0)
+			to[resistor, l=$R_2$, -*] ++ (0,2) coordinate (A)
+			to[short, -o] ++ (1,0)
+			node[auto, anchor=west] {$U_o$}
+			(A) to[resistor, l=$R_1$] ++ (0,2)
+			-- ++ (1,0)
+			node[vcc] {$V_{in}$}
+		;
+	\end{tikzpicture}
+	\caption{Using an attenuator to add a DC offset to an input voltage}
+	\label{fig:attenuator-voltage-adder}
+\end{figure}
+
+\cref{fig:attenuator-voltage-adder} is a schematic of this idea. This also works with a capacitive attenuator but for simplicity the calculations will only be done for a resistive attenuator. The overall voltage across both resistors has now changed from $V_{cc} - GND = V{cc} - \SI{0}{V} = V_{cc}$ to the new voltage $U = U_{in} - U_+$. The voltage drop across both resistors stays the same as before, just the input voltage needs to be replaced in this formula:
+\begin{equation*}
+	U_2 = U \cdot \frac{R_2}{R_1 + R_2} = (U_{in} - U_+) \cdot \frac{R_2}{R_1 + R_2}
+\end{equation*}
+but $U_2$ is only the voltage drop across $R_2$. We know that the electrical potential has a value of $U_+$ after the current coming from the input signal has passed $R_2$ and we know that it lost a voltage of $U_2$ on its way through $R_2$:
+\begin{align*}
+	U_o &= U_+ + U_2 = U_+ + (U_{in} - U_+) \cdot \frac{R_2}{R_1 + R_2} \\
+		&= U_{in} \cdot \frac{R_2}{R_1 + R_2} + U_+ \left(1 - \frac{R_2}{R_1 + R_2}\right) \\
+		&= U_{in} \cdot \frac{R_2}{R_1 + R_2} + U_+ \cdot \frac{R_1}{R_1 + R_2}\,.
+\end{align*}
+We have shown that this change to the attenuator adds a DC offset of $U_+ \cdot \frac{R_1}{R_1 + R_2}$ to the output voltage $U_0$. This can be used to transform an AC input signal from $\pm U_{in}$ to a range between $\SI{0}{V}$ and the reference voltage $U_{ref}$ of an ADC which makes the signal $\pm U_{in}$ measurable with an ADC. If we want to realise this idea we need to calculate the right values for the resistors and $U_+$.
+
+For our usage we assume that we want to combine an attenuator with a reference Voltage $U_+$ to transform input signals from $\pm{}U_{in}$ which are way above and below the input range of an ADC into a measurable range from $\SI{0}{V}$ to $U_{Aref}$. We want to calculate the right resistor values and reference voltage for a given $\pm{}U_{in}$ and $U_{Aref}$. Therefore we have to take a look at the two cases $+U_{in}$ and $-U_{in}$ where the output voltage of the attenuator should match $U_{Aref}$ and $\SI{0}{V}$.
+
+In the first case we want the maximum value $+U_{in}$ to be mapped to $U_{Aref}$:
+\begin{align}
+	U_{Aref} &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} + U_+ \cdot \frac{R_1}{R_1 + R_2} \\
+	U_+ \cdot \frac{R_1}{R_1 + R_2} &= U_{Aref} - \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2}
+\end{align}
+and in the second case the minimum value $-U_{in}$ to be equal to Gnd:
+\begin{align}
+	\text{Gnd} &= - \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} + U_+ \cdot \frac{R_1}{R_1 + R_2} \\
+	U_+ \cdot \frac{R_1}{R_1 + R_2} &= \text{Gnd} + \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} = \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2}\,.
+	\label{equ:attenuator_with_offset_derivation}
+\end{align}
+For simplicity we set Ground to $\SI{0}{V}$ and we can combine the equations:
+\begin{align}
+	\lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} &= U_{Aref} - \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} \\
+	2 \cdot \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} &= U_{Aref} \\
+	2 \cdot \lvert U_{in} \rvert &= U_{Aref} \cdot \frac{R_1 + R_2}{R_2} = U_{Aref} \cdot \left( \frac{R_1}{R_2} + 1 \right) \\
+	2 \cdot \frac{\lvert U_{in} \rvert}{U_{Aref}} &= \frac{R_1}{R_2} + 1 \\
+	\frac{R_1}{R_2} &= \frac{2 \cdot \lvert U_{in} \rvert}{U_{Aref}} - 1\,.
+\end{align}
+This equation shows us that, independent from the voltage shift we can choose a value for one resistor and get the implicit value for the other resistor. The value for the voltage shift can be calculated after the resistor values have been selected. This will be shown with a modification of \cref{equ:attenuator_with_offset_derivation}:
+\begin{align}
+	U_+ \cdot \frac{R_1}{R_1 + R_2} &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} \\
+	U_+ &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} \cdot \frac{R_1}{R_1 + R_2} \\
+			&= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1}\,.
+\end{align}
+With these equations we can easily choose the right values for the resistors and the offset voltage when we have decided on the input voltages we want to measure with an ADC.
+
+
