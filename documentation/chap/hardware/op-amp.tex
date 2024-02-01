@@ -59,7 +59,7 @@ Here is an example of how to use this buffer properly: A voltage divider can be 
 	\centering
 	\begin{tikzpicture}
 		\draw (0,0) node[op amp] (opamp) {}
-			(opamp.-) -- ++ (0,1.5)
+			(opamp.-) -- ++ (0,1)
 			-| (opamp.out) node {$\bullet$}
 			-- ++ (0.5,0) node[right] {$U_{out}$}
 			(opamp.+) -- ++ (-1,0) node {$\bullet$} coordinate (A)
@@ -75,6 +75,39 @@ If the input voltage $V_{cc}$ is constant and has no time dependency it would be
 
 \subsection{Op-Amp as a non-inverting amplifier}
 
-Amplification of input signals is another important task for an op-amp. There are multiple ways to perform an amplification. Here the non-inverting amplifier circuit is going to be explained.
+Amplification of input signals is another important task for an op-amp. There are multiple ways to perform an amplification. Here the non-inverting amplifier circuit is going to be explained. Its schematics can be seen in \cref{fig:non_inverting_amplifier}.
 
-\todo[inline]{Describe the non-inverting amplifier and where the formula comes from and also state why tne non-inverting amplifier is not being used in this approach}
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[op amp, noinv input up] (opamp) {}
+			(opamp.out) -- ++ (1,0) node[right] {$U_{out}$}
+			(opamp.out) ++ (0.5,0) node {$\bullet$}
+			to[resistor, l=$R_1$] ++ (0,-2) node {$\bullet$} coordinate (A)
+			to[resistor, l=$R_2$] ++ (0,-2) node[ground] (gnd) {}
+			(A) -| (opamp.-)
+			(opamp.+) -- ++ (-1,0)
+			++ (0,-2) node[ground] (gnd) {}
+			to[sV, l=$U_{in}$] ++ (0,2)
+		;
+	\end{tikzpicture}
+	\caption{Op-Amp as a non-inverting amplifier}
+	\label{fig:non_inverting_amplifier}
+\end{figure}
+
+How does this circuit work? We can use the rules of the ideal op-amp again to derive the behavior of this circuit. The inverting input voltage $U_-$ is going to match the voltage at the non-inverting input voltage $U_+$ which determines the voltage in between the two resistors of the attenuator. Therefore we can set $U_0$ from \cref{fig:simple-voltage-divider} equal to the input voltage:
+\begin{equation}
+	U_{in} = U_{out} \cdot \frac{R_2}{R_1 + R_2}\,.
+\end{equation}
+This equation can be transformed to calculate $U_{out}$ based on an arbitrarily chosen $U_{in}$:
+\begin{equation}
+	U_{out} = U_{in} \cdot \frac{R_1 + R_2}{R_2} = U_{in} \cdot \left( 1 + \frac{R_1}{R_2} \right)\,.
+\end{equation}
+This equation shows that the amplification factor, formally known as the \glqq{}gain\grqq{}, cannot be lower than $\SI{1}{}$. This amplification circuit is going to be used to increase the voltage range of an ADC: Small voltages can be increased and with a known gain the original voltage can be calculated from the measured amplified voltage.
+
+There is also an \glqq{}inverting amplifier\grqq{} circuit which is more frequently used in electronic applications. However there are some reasons why this approach is more suitable for this simple circuit:
+\begin{itemize}
+	\item The input impedance of the non-inverting amplifier is higher and will have a smaller effect on the measurement of an analog voltage. A higher impedance means that the voltage drop is lower.
+	\item With an inverting amplifier a positive input voltage turns into a negative output voltage. This can only work when the $U_{ss}$ supply pin of the op-amp is connected to a negative voltage source. However there is no negative voltage source on the Raspberry Pi Pico microcontroller board. It could be easily created with an inverter chip but this would increase the complexity of the whole oscilloscope. By using the non-inverting amplifier and making sure that the input voltage is positive the need for a negative voltage source is not present.
+	\item The inverting amplifier introduces a connection between the input and the output signal. This makes it harder to get the overall input impedance of a measurement input from the oscilloscope.
+\end{itemize}
