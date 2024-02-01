@@ -1,9 +1,7 @@
 .PHONY: pdf clean
 
 pdf: $(shell find . -type f -name '*.tex')
-	pdflatex main.tex
-	pdflatex main.tex
-	pdflatex main.tex
+	latexmk -pdf
 
 clean: main.pdf
 	latexmk -c

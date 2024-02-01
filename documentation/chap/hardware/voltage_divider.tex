@@ -113,7 +113,7 @@ and the use of $Q = C_x \cdot V_{cc} = C_2 \cdot U_2$ the voltage $U_2$ drop acr
 \end{equation*}
 From symmetric reasons the equation for $U_1$ looks similar:
 \begin{equation*}
-	U_1 =  V_{cc} \cdot \frac{C_1}{C_1 + C_2}
+	U_1 =  V_{cc} \cdot \frac{C_2}{C_1 + C_2}
 \end{equation*}
 
 From this the characteristic equation of the capacitive voltage divider is \cref{equ:capacitive-voltage-divider}
@@ -233,6 +233,6 @@ This equation shows us that, independent from the voltage shift we can choose a 
 	U_+ &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} \cdot \frac{R_1}{R_1 + R_2} \\
 			&= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1}\,.
 \end{align}
-With these equations we can easily choose the right values for the resistors and the offset voltage when we have decided on the input voltages we want to measure with an ADC.
+With these equations we can easily choose the right values for the resistors and the offset voltage when we have decided on the input voltages we want to measure with an ADC. The offset voltage can be provided with an Operational Amplifier.
 
 

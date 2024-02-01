@@ -24,8 +24,7 @@
 \usepackage{amsmath}						% math
 \usepackage{amssymb}						% more math
 \usepackage{nicefrac}						% fancy fractions
-\usepackage{enumitem}						% itemization
-\usepackage{enumerate}					% enumerations
+\usepackage{enumitem}						% itemization and enumeration
 \usepackage{siunitx}						% proper handling of values with units
 \sisetup{separate-uncertainty=true}
 
