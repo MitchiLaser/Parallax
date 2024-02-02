@@ -1,0 +1,42 @@
+\section{Further electrical components and their usage}
+
+\subsection{Voltage clamping with Diodes}
+
+A Diode is a semiconductor device  that allows current to flow in one direction only\footnote{This is technically not true because a diode can also let current flow in the opposite direction but this aspect is not necessary for the design described in this report}. When a Voltage is applied across the two terminals in the forward direction the current flows easily whereas on the other hand, when the current is applied in reverse direction, the diode blocks the current. In forward direction the current can only flow when the applied voltage is above a threshold limit, the forward voltage, which for standard silicon diodes is approximately $\SI{0.6}{V}$ to $\SI{0.7}{V}$. This also means that in forward direction a voltage has a constant voltage drop which is equal to its forward voltage. Usually diodes are used to rectify electrical voltages. Apart from the standard semiconductor diodes there are other different types of diodes, e.g. Light-emitting Diodes (LEDs), Zener diodes and Schottky diodes. \cref{fig:diode-types} shows the electrical symbols for some diodes.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) to[Do] ++ (2,0)
+			(4,0) to[zDo] ++ (2,0)
+			(8,0) to[sDo] ++ (2,0)
+		;
+	\end{tikzpicture}
+	\caption{Diode types (left to right): standard diode, Z-Diode, Schottky-Diode}
+	\label{fig:diode-types}
+\end{figure}
+
+We want to use a diode to prevent our circuit from input voltages which exceed the range it was designed for. \cref{fig:clamping-diodes} shows how this is done: When the signal line is below $\SI{0}{V}$ then the ground terminal is at a higher potential than the signal line and the current flows from $D_2$ directly to ground. When the signal line is above the supply voltage $V_{cc}$ the same happens with $D_1$. However this only works when the input impedance of the device $U_{out}$ is connected to is lower than the resistance across the diode. This way the voltage at $U_{out}$ can be clamped to a defined voltage range.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) node[ground] {} 
+			to[sV, l=$U_{in}$] ++ (0,2)
+			-- ++ (0.5,0)
+			to[R, l=R] ++ (2,0)
+			-- ++ (1,0) node {$\bullet$} coordinate (A)
+			to[short, -o] ++ (1,0) node[right] {$U_{out}$}
+			(A) to[Do, l=$D_1$] ++ (0,2)
+			node[vcc] {$V_{cc}$}
+			(A) ++ (0,-2) node[ground] {}
+			to[Do, l=$D_2$] (A)
+		;
+	\end{tikzpicture}
+	\caption{A visualisation of the usage of clamping diodes}
+	\label{fig:clamping-diodes}
+\end{figure}
+
+There is one disadvantage when this circuit is build with normal diodes: The voltage between the two terminals must be greater than the forward voltage. In this Example the voltage can only be clamped between $\SI{-0,7}{V}$ and $V_{cc} + \SI{0,7}{V}$. Diodes with a smaller forward voltage reduce this gap and here Schottky diodes are the better choice. Normal diodes are build by combining a p-type and a n-type doped semiconductor. Schottky diodes are just a combination of a doped semiconductor and a bare metal. This construction has faster switching times and lower forward voltages, down to $\SI{0,3}{V}$, compared to conventional diodes. When using Schottky diodes the voltage range which can be achieved with clamping diodes is closer to the reference voltages provided in the circuit.
+
+To find the right diodes for this purpose we also need diodes which can withstand the current. The resistor $R$ in \cref{fig:clamping-diodes} plays a crucial role: without it the current might get really high and the diodes burn from the heat dissipation. This factor also has to be considered when looking for the right electrical components.

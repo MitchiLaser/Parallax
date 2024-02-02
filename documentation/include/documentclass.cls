@@ -60,4 +60,5 @@
 % TIKZ
 \usepackage{tikz}
 \usetikzlibrary{circuits.logic.IEC}
+\usetikzlibrary {arrows.meta}
 \usepackage[siunitx, european]{circuitikz}
