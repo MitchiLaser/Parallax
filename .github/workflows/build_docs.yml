@@ -3,21 +3,21 @@ name: build documentation
 on: [push, pull_request]
 
 jobs:
-  docs:
+  build_docs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: compile LaTeX document
-      - uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v3
         with:
           working_directory: documentation
           root_file: main.tex
           texlive_version: 2023
 
       - name: export pdf file
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: main.pdf
+          path: docs/main.pdf
