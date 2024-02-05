@@ -16,8 +16,9 @@ jobs:
           root_file: main.tex
           texlive_version: 2023
 
-      - name: export pdf file
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: docs/main.pdf
+      # upload-artifact: currently not used
+      #- name: export pdf file
+        #uses: actions/upload-artifact@v3
+        #with:
+          #name: PDF
+          #path: documentation/main.pdf
