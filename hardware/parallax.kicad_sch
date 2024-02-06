@@ -398,7 +398,7 @@
     (property "Value" "Conn_Coaxial" (at 35.56 42.2032 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 39.37 40.64 0)
+    (property "Footprint" "Connector_Coaxial:BNC_Amphenol_B6252HB-NPP3G-50_Horizontal" (at 39.37 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (at 39.37 40.64 0)
