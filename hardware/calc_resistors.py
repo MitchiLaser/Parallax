@@ -30,6 +30,7 @@ round_prec = 8
 
 # calculate the resistor and capacitor ratio for the attenuator
 Attenuator_Resistor_ratio = (2 * max(In_Ranges)) / U_max - 1  # R_1 / R_2
+print(f"Resistor Ratio for the Attenuator: R_1 / R_2 = {Attenuator_Resistor_ratio}")
 
 # the amplifier has to map a smaller voltage range to the range of the maximum input voltage since the attenuator stays the same for each input range
 amp_gains = [max(In_Ranges) / i for i in In_Ranges]
@@ -67,6 +68,6 @@ print_results_table(
         "Amplifier Gain",
         "Offset Voltage",
         "Corrected offset Voltage",
-        "R_a / R_b for corr. Offset Voltage"
+        "R_a / R_b corr. Offset"
     ]
 )
