@@ -24,27 +24,49 @@ U_max = 3  # 3 V, better than 3,3 V because for 3 V the resistor values are clos
 # define the reference voltage for the ADC to get the middle in between the ADC range
 U_aref = 3.3  # 3,3 V
 
+# rounding_precision in decimal places
+round_prec = 8
 
-# print the input rages as the first information
-print(f"Input ranges: {In_Ranges}")
 
 # calculate the resistor and capacitor ratio for the attenuator
 Attenuator_Resistor_ratio = (2 * max(In_Ranges)) / U_max - 1  # R_1 / R_2
-print(f"Resistor ratio: R_1 / R_2 = {Attenuator_Resistor_ratio}")
 
 # the amplifier has to map a smaller voltage range to the range of the maximum input voltage since the attenuator stays the same for each input range
 amp_gains = [max(In_Ranges) / i for i in In_Ranges]
-print(f"Values for the amplifier gains: {amp_gains}")
 
 # the offset voltage needs to be calculated for each individual input range
 # if only one would be used then this will interfere with the Op-Amp also amplifying the baseline
 offsets = [i / Attenuator_Resistor_ratio for i in In_Ranges]
-print(f"Offset Voltages: {offsets}")
 
 # correct the offsets to be in the middle:
 corrected_offsets = [(U_aref / (2 * amp_gains[i])) * (1 / Attenuator_Resistor_ratio + 1) for i in range(len(In_Ranges))]
-print(f"Corrected offset: {corrected_offsets}")
 
 # now calculate the resistor ratios for the voltage follower providing the offset voltage
 resistor_ratios = [U_aref / i - 1 for i in corrected_offsets]
-print(f"Resistor ratios for the offset voltages: R_a / R_b = {resistor_ratios}")
+
+
+def print_results_table(lists: list[list], titles: list[str]) -> None:
+    print("┌─" + '─┬─'.join(["─" * len(i) for i in titles]) + "─┐")
+    print("│ " + ' │ '.join(titles) + " │")
+    print("├─" + '─┼─'.join(["─" * len(i) for i in titles]) + "─┤")
+    for i in range(max([len(i) for i in lists])):
+        print("│ " + ' │ '.join([str(round(lists[j][i], round_prec)) + " " * (len(titles[j]) - len(str(round(lists[j][i], round_prec)))) for j in range(len(lists))]) + " │")
+    print("└─" + '─┴─'.join(["─" * len(i) for i in titles]) + "─┘")
+
+
+print_results_table(
+    [
+        In_Ranges,
+        amp_gains,
+        offsets,
+        corrected_offsets,
+        resistor_ratios
+    ],
+    [
+        "Input Range",
+        "Amplifier Gain",
+        "Offset Voltage",
+        "Corrected offset Voltage",
+        "R_a / R_b for corr. Offset Voltage"
+    ]
+)
