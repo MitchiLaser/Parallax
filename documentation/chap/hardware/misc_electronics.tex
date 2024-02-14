@@ -41,6 +41,8 @@ There is one disadvantage when this circuit is build with normal diodes: The vol
 
 To find the right diodes for this purpose we also need diodes which can withstand the current. The resistor $R$ in \cref{fig:clamping-diodes} plays a crucial role: without it the current might get really high and the diodes burn from the heat dissipation. This factor also has to be considered when looking for the right electrical components.
 
+Besides clamping these diodes also serve as an ESD protection. Electrostatic discharge (ESD) refers to the sudden flow of electricity between two electrically charged objects caused by contact. This discharge can occur when there is a difference in electrical potential between two objects, leading to the rapid transfer of electrons from one object to the other (p.Ex. Touching metal objects after walking over a carpet can lead to small electric shocks). ESD is dangerous for electronic components primarily because the voltage range of the discharges can easily reach values of kilovolts whereas many components can only operate in ranges of a few volts. When these sparks occur the electrical components are still in safe because the diodes are still going to clamp the voltages in between the legal range.
+
 \subsection{Analog Multiplexers}
 
 An analog multiplexer is an electronic component which works like a switch between multiple signals and a common input or output. The common terminal is routed to one of the available other terminals and the other terminals behave like they are not connected (tristate). To select the terminal the multiplexer has some input signal lines which act as a binary coded selection.
