@@ -1,12 +1,12 @@
 \section{Voltage Divider}
 
-One of them most important circuits in electronics is the voltage divider as depicted in \cref{fig:simple-voltage-divider}. In this circuit two resistors $R_1$ and $R_2$ are between connected in series between a voltage source $V_{cc}$ and Ground. Because this is a closed circuit there is a current flowing through the resistors and each resistor is responsible for an individual voltage drop. Can we calculate the voltage $U_o$ between these two resistors?
+One of them most important circuits in electronics is the voltage divider, depicted in \cref{fig:simple-voltage-divider}. In this circuit two resistors $R_1$ and $R_2$ are between connected in series between a voltage source $V_{cc}$ and Ground. Since it's a closed circuit there's a current flowing through the resistors and each resistor causes an individual voltage drop. Can we calculate the voltage $U_o$ between these two resistors?
 
-It is simple to see that the current flowing in this circuit is the same for both resistors. When two resistors are connected in series their resistances sum up and this total resistance can be used to calculate the current with Ohms law:
+It's easy to see that the current flowing in this circuit is the same for both resistors. When two resistors are connected in series their resistances add up and this total resistance can be used to calculate the current with Ohms law:
 \begin{equation*}
 	I = \frac{U}{R} = \frac{V_{cc}}{R_1 + R_2}\,.
 \end{equation*}
-We also know that the voltage drop $U_1$ across $R_1$ and the voltage drop $U_2$ across $R_2$ sum up to the supply voltage: $U_1 + U_2 = V_{cc}\,$. The voltage drop across $R_2$ can be calculated using Ohms law again because we know the current and the resistance:
+We also know that the voltage drop $U_1$ across $R_1$ and the voltage drop $U_2$ across $R_2$ add up to the supply voltage: $U_1 + U_2 = V_{cc}\,$. The voltage drop across $R_2$ can be calculated using Ohm's law again because we know the current and the resistance:
 \begin{equation*}
 	U_2 = R \cdot I = V_{cc} \cdot \frac{R_2}{R_1 + R_2}\,.
 \end{equation*}
@@ -15,7 +15,7 @@ A similar behavior can be seen for $R_1$:
 	U_1 = R \cdot I = V_{cc} \cdot \frac{R_1}{R_1 + R_2}\,.
 \end{equation*}
 
-This shows us that we can calculate the voltage $U_o = U_2 = V_{cc} - U_1$ between the resistors. It is independent from the total current and only depending on the ratio of the two resistors. It would not make a difference if we use $R_1 = \SI{10}{K\Omega}, R_2 = \SI{2,2}{K\Omega}$ or $R_1 = \SI{10}{\Omega}, R_2 = \SI{2,2}{\Omega}$, the result would be the same.
+This shows us that we can calculate the voltage $U_o = U_2 = V_{cc} - U_1$ between the resistors. It's independent of the total current and only depends on the ratio of the two resistors. It wouldn't make a difference if we use $R_1 = \SI{10}{K\Omega}, R_2 = \SI{2,2}{K\Omega}$ or $R_1 = \SI{10}{\Omega}, R_2 = \SI{2,2}{\Omega}$, the result would be the same.
 
 
 \begin{figure}[htb]
@@ -66,7 +66,7 @@ and the result of this is smaller than $R_2$ and $R_L$. The load changes the vol
 
 A voltage divider can only be used as a voltage source if there is no load attached to it. This means we cannot use it to drive an electric device but we will later see that there is a possibility to avoid this issue.
 
-Right now we only have discussed what happens when we have a fixed voltage $V_{cc}$ driving this circuit. With an AC supply $U = U_0 \cdot \sin(\omega \cdot t)$ the voltage divider still works the same because only $V_{cc}$ is time dependant, the resistors are constant and independent from the voltage or the frequency of $V_{cc}$ and therefore it should work the same with AC and DC current.
+Right now we only have discussed what happens when we have a fixed voltage $V_{cc}$ driving this circuit. With an AC supply $U = U_0 \cdot \sin(\omega \cdot t)$ the voltage divider still works the same because only $V_{cc}$ is time dependent; the resistors are constant and independent from the voltage or the frequency of $V_{cc}$ and therefore it should work the same with AC and DC current.
 
 \begin{figure}[htb]
 		\centering
@@ -75,12 +75,12 @@ Right now we only have discussed what happens when we have a fixed voltage $V_{c
 		\label{fig:voltage-divider-distortion}
 \end{figure}
 
-Hold on! The last paragraph was partially a lie. In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. If we want to measure the voltage $U_o$ then our measurement device (which would be an ADC) has a large input resistance and a small input capacity. The large input resistance is good because ifs effect on the voltage divider can be neglected\footnote{You wanna know why? Calculate the reduction of an input voltage for a 1:1 voltage divider made out of $\SI{1}{K\Omega}$ resistors with and without an $R_L = \SI{10}{M\Omega}$ load.} but the small input capacitance would introduce a new side effect on this circuit. \cref{fig:voltage-divider-distortion} is a simulation of a square signal which will be distorted by the small input capacitance ($C_1 = \SI{15}{pF}$) of a measurement device (The large input resistance $R_3 = \SI{1}{M\Omega}$ was also taken into account in this simulation). Before we discuss how to deal with this side effect we will take a look on a voltage divider which is build especially for AC currents.
+Hold on! The last paragraph was partially a lie. In theory a resistor should only have a resistance but in reality every component has some resistance, capacitance and inductance. In many cases we can ignore the unwanted side-effects but when the circuit has to interact with high frequency signals these have to be taken into account. If we want to measure the voltage $U_o$ then our measurement device (which would be an ADC) has a large input resistance and a small input capacity. The large input resistance is good because ifs effect on the voltage divider can be neglected\footnote{You wanna know why? Calculate the reduction of an input voltage for a 1:1 voltage divider made out of $\SI{1}{K\Omega}$ resistors with and without an $R_L = \SI{10}{M\Omega}$ load.} but the small input capacitance would introduce a new side effect on this circuit. \cref{fig:voltage-divider-distortion} is a simulation of a square signal which will be distorted by the small input capacitance ($C_1 = \SI{15}{pF}$) of a measurement device (The large input resistance $R_3 = \SI{1}{M\Omega}$ was also taken into account in this simulation). Before we discuss how to deal with this side effect we will take a look on a voltage divider which is especially build for AC currents.
 
 
 \subsection{The capacitive voltage divider}
 
-For a DC voltage a capacitor is an impervious barrier but for an AC voltage the capacitor behaves like an electrical conductor which induces a phase shift of $\SI{90}{\degree}$. If we arrange two capacitors as seen in \cref{fig:capacitive-voltage-divider} and have an alternating voltage $\sim V_{cc}$ we can observe an similar behavior as with the resistor based voltage divider in \cref{fig:simple-voltage-divider}.
+For a DC voltage a capacitor is an impervious barrier but for an AC voltage the capacitor behaves like an electrical conductor which induces a phase shift of $\SI{90}{\degree}$. If we arrange two capacitors as seen in \cref{fig:capacitive-voltage-divider} and have an alternating voltage $\sim V_{cc}$ we can observe a similar behavior as with the resistor-based voltage divider in \cref{fig:simple-voltage-divider}.
 
 
 \begin{figure}[htb]
@@ -208,6 +208,8 @@ We have shown that this change to the attenuator adds a DC offset of $U_+ \cdot 
 
 For our usage we assume that we want to combine an attenuator with a reference Voltage $U_+$ to transform input signals from $\pm{}U_{in}$ which are way above and below the input range of an ADC into a measurable range from $\SI{0}{V}$ to $U_{Aref}$. We want to calculate the right resistor values and reference voltage for a given $\pm{}U_{in}$ and $U_{Aref}$. Therefore we have to take a look at the two cases $+U_{in}$ and $-U_{in}$ where the output voltage of the attenuator should match $U_{Aref}$ and $\SI{0}{V}$.
 
+
+% part 1
 In the first case we want the maximum value $+U_{in}$ to be mapped to $U_{Aref}$:
 \begin{align}
 	U_{Aref} &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} + U_+ \cdot \frac{R_1}{R_1 + R_2} \\
@@ -234,5 +236,3 @@ This equation shows us that, independent from the voltage shift we can choose a 
 			&= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1}\,.
 \end{align}
 With these equations we can easily choose the right values for the resistors and the offset voltage when we have decided on the input voltages we want to measure with an ADC. The offset voltage can be provided with an Operational Amplifier.
-
-

@@ -1,4 +1,28 @@
 \section{Designing the schematics}
 
+The whole Schematics can be seen in %\cref{}
+. Each major component is treated as a submodule which will be explained in detail individually.
+
+\todo[inline]{Add picture and explaination of main structure}
+
+\subsection{Analog Front-End}
+
+The analog front-end is responsible for the following operations:
+\begin{itemize}
+	\item \textbf{Signal Coupling}: The front-end may offer different coupling options such as AC coupling or DC coupling. AC coupling blocks DC components of the signal, allowing only the AC portion to be displayed. DC coupling allows both AC and DC components to be displayed.
+	\item \textbf{Signal attenuation}: The input signal might be in a range too large for the ADC. Attenuation circuits  reduce the magnitude of the incoming signal to a level that can be properly processed.
+	\item \textbf{Signal amplification}: The analog front-end includes an amplifier stage to increase the magnitude of small signals. This amplification is necessary to ensure that small signals can be accurately measured.
+	\item \textbf{Input Range selection}: To achieve a good measurement quality the attenuation and amplification can be varied depending on a selected input range. This input range is going to be mapped to the voltages which are suitable for the ADC.
+	\item \textbf{Clamping}: Clamping diodes fix the maximum and minimum voltage level of the input signals and saves electrical components from dangerous voltages. Furthermore they are a good ESD protection for the circuit.
+	\item \textbf{Signal Filtering}: In order to keep the input signals within the Nyquist frequency range a low-pass filter reduces aliasing effects.
+	\item \textbf{Input impedance matching}: It's crucial for the oscilloscope to present a high input impedance to the circuit under test to minimize loading effects. The front-end typically ensures impedance matching to prevent distortion of the measured signal due to the oscilloscope's presence in the circuit.
+	\item \textbf{Calibration}: Some parts of the circuit may compensate for any inaccuracies introduced by the analog components or variations in manufacturing.
+\end{itemize}
+
+At first some global decisions have to be made: The Input ranges (and how many of them are going to be available) and the 
+
 \todo[inline]{Explain how the schematics diagram works, how all values were calculated and why some test pins were placed on their locations. Maybe also write something about the pcb layout?}
+
+
+
 \todo[inline]{Design the PCB in a way that the backside has no electronic parts but a silk screen of all the schematics (mirrored) and all the test points should also be on this side}
