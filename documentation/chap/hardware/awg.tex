@@ -1,0 +1,51 @@
+\section{Signal Generator}
+
+The Data Acquisition system should be extended by a arbitrary waveform generator which consists of a Digital to Analog Converter (DAC) and an amplification stage. This can be used to generate arbitrary signals: Sine-waves, triangular or rectangular periodical voltages with an adjustable frequency and amplitude. This enables students to explore and understand concepts in waveform generation, frequency modulation and signal processing and enhances the oscilloscope with a signal source. Many lab curse experiments can benefit from that e.g. measuring the frequency response of RC components, inductances or analysing the behavior or transistors and op-amps.
+
+\subsection{R2R-Ladder DAC}
+
+The DAC is a self-made R2R Ladder Structure which is driven by some parallel connected GPIO Pins. A Diagram for a 4-Bit DAC can be seen in \cref{fig:r2r-ladder}.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\pgfmathsetmacro{\num}{4} % number of resistor-network stages
+		\pgfmathtruncatemacro{\numminusone}{\num-1}
+		\pgfmathtruncatemacro{\numminustwo}{\num-2}
+		\foreach \i in {0, ..., \numminustwo} {
+			\draw (\i * 2,0) to[resistor, l=$2R$, *-] ++ (0,2)
+			node[above] {$B_{\i}$}
+				++ (0,-2) to[resistor, l=$R$] ++ (2,0)
+			;
+		}
+		\draw (0,0) to[resistor, l=$2R$] ++ (0,-2)
+			node[ground] {}
+			(\numminustwo * 2 + 2,0) to[resistor, l=$2R$, *-] ++ (0,2)
+			node[above] {$B_{\numminusone}$}
+			++ (0,-2) to[short, -*] + (1,0)
+			node[right] {$U_{DAC}$}
+		;
+	\end{tikzpicture}
+	\caption{R2R Ladder structure for a 4-Bit DAC}
+	\label{fig:r2r-ladder}
+\end{figure}
+
+A detailed explanation how this DAC is working would take away some pages in this document so this explanation is going to cover only a rough overview. Any of the inputs $U_x$ can be set to a logical $1$ or a logical $0$ which is equivalent to connect the input to the supply voltage $V_{cc}$ or GND. If only the most significant bit (most right) )s set then all the other bits (on the left side) are connected to ground. The last digit ($B_0$) has two parallel resistors with a Value of $2R$ connected to ground, resulting in a Thevenin Equivalent circuit of a Grounding with a Thevenin resistance of $2R \parallel 2R = R$. After that the first resistor $R$ follows in series from where on both resistors are equivalent to $2R$. From there on the next Bit ($B_1$) is equally connected as the previous one before constructing the Thevenin Equivalent which means that the Thevenin Equivalent for all following zeroed Bits is the same. When we reach the first positive bit (in this case the highest order bit) the equivalent circuit is a voltage divider from $V_{cc}$ (the positive bit) to Ground via two $2R$ resistors and this results in an output voltage of $U_{DAC} = V_{cc} \cdot \frac{2R}{2R + 2R} = \frac{V_{cc}}{2}$ and a Thevenin resistance of $R$.
+
+Let's assume that all bits are zero except for the second largest one. In this case again all the previous zeroed bits have a Thevenin equivalent of a grounded Connection with a resistance of $2R$ (Thevenin Resistance + R in series from the ladder) and the equivalent circuit of the positive bit is, as calculated before, $\frac{V_{cc}}{2}$ for the second largest bit. Following the resistor chain now the last bit, which is set to $0$, creates a second attenuator with the resistors $2R$ in series to $2R$. This halves the voltage again to $\frac{V_{cc}}{4}$ and keeps the Thevenin resistance still at $R$.
+
+This principle applies for all the other bits. Now we can apply the principle of superposition: All currents from the input Bits flowing towards the output sum up. The DAC output voltage can therefore be described as follows:
+\[
+U_{DAC} = \sum_{i = 1}^N \frac{V_{cc}}{i + 1}
+\]
+When all Bits are turned on for a 3-Bit DAC then the output voltage is
+\[
+	U_{DAC} = \frac{V_{cc}}{2} + \frac{V_{cc}}{4} + \frac{V_{cc}}{8} = V_{cc} \cdot \frac{7}{8}\,.
+\]
+Unfortunately a R2R ladder DAC can never generate the full supply voltage $V_{cc}$ at its output but with a higher Bit resolution the difference shrinks to a negligibly small size. The R2R ladder generates the voltage but as in all previously explained situations the important rule for resistor networks also applies here: Drawing current changes the behavior of the network. Therefore again a combination of buffers and amplifiers, especially to create a output driver with a predefined impedance.
+
+Last but not least a low-pass filter is useful to suppress aliasing effects. The R2R ladder has an output impedance equal to $R$ so the low-pass filter can be constructed by adding a capacitor.
+
+\subsection{The Output stage}
+
+\todo[inline]{write chapter}

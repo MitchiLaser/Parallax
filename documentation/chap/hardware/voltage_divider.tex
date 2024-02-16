@@ -208,8 +208,6 @@ We have shown that this change to the attenuator adds a DC offset of $U_+ \cdot 
 
 For our usage we assume that we want to combine an attenuator with a reference Voltage $U_+$ to transform input signals from $\pm{}U_{in}$ which are way above and below the input range of an ADC into a measurable range from $\SI{0}{V}$ to $U_{Aref}$. We want to calculate the right resistor values and reference voltage for a given $\pm{}U_{in}$ and $U_{Aref}$. Therefore we have to take a look at the two cases $+U_{in}$ and $-U_{in}$ where the output voltage of the attenuator should match $U_{Aref}$ and $\SI{0}{V}$.
 
-
-% part 1
 In the first case we want the maximum value $+U_{in}$ to be mapped to $U_{Aref}$:
 \begin{align}
 	U_{Aref} &= \lvert U_{in} \rvert \cdot \frac{R_2}{R_1 + R_2} + U_+ \cdot \frac{R_1}{R_1 + R_2} \\

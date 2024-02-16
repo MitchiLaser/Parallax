@@ -46,3 +46,28 @@ When selecting diodes, their current tolerance is critical. The resistor $R$ in 
 An analog multiplexer is an electronic component acting like a switch, routing multiple signals and a common input or output. Only one of the terminals can be connected at a time. Selection occurs via input signal lines which determine the connected terminal by the binary representation of its terminal number.
 
 On the oscilloscope a multiplexer switches between resistors which are connected to ground. This makes the gain of a non-inverting amplifier variable across pre-defined configurations.
+
+\subsection{Low pass filters}
+
+A low pass filter is a combination of a resistor and a capacitor as depicted in \cref{fig_lowpass}. When a high frequency signals comes into this circuit form the left side then the capacitor is charged. This results in a smothering of the input signal. A low frequency signal gets less distorted than a high frequency signal.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) -- ++ (0.5,0)
+			to[resistor, l=$R$] ++ (2,0)
+			-- ++ (0.5,0)
+			to[capacitor, l=$C$, *-] ++ (0,-1.5)
+			node[ground] {}
+			++ (0,1.5) -- ++ (1,0)
+		;
+	\end{tikzpicture}
+	\caption{Low-Pass filter}
+	\label{fig_lowpass}
+\end{figure}
+
+This circuit can be used to filter out some high frequency parts of a signal above the cutoff frequency:
+\[
+f = \frac{1}{2 \cdot \pi \cdot R \cdot C}\,.
+\]
+A low pass filter is going to be used to remove unwanted higher order frequency components of the input signal and removes aliasing effects. The reason for them is the Nyquist-Shannon theorem which in simple terms says that the highest with an oscilloscope measurable frequency is half of the sampling rate.
