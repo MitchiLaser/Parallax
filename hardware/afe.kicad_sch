@@ -1195,6 +1195,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 3e8a32a6-bd8f-44f5-a69a-055fe147885e)
   )
+  (text "TODO: rotate them because one of the options must be infinitely high (voltage follower)"
+    (at 89.535 173.355 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 403dbd4f-663b-4b91-aba3-e99e59b2406a)
+  )
   (text "Clamping diode to prevent\nover- / undervoltage" (at 229.87 53.34 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4196104f-ce69-4cd5-8386-819ab5e7d8fa)

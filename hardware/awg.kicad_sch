@@ -544,15 +544,15 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 8d51a62d-3afd-474f-8978-79d8c13a738c)
   )
-  (text "todo:\n- Buffer\n- Output Stage with 50Ω driver\n- Test-Points"
-    (at 205.74 83.82 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid a745739f-6ba4-43e8-8474-de1711cdb375)
-  )
   (text "8-Bit R2R Ladder DAC (parallel atached)\nAmplifier and 50Ω driver"
     (at 186.69 173.99 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid d87c77b8-e6df-4c56-8a80-d3346fe950ff)
+  )
+  (text "This Op-Amp is powerfull enough\nto drive a 50Ω line"
+    (at 101.6 71.12 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ecd47050-a173-488c-bd05-d8979fef81c9)
   )
   (text "output impedance of R2R ladder: R = 2K2Ω\nMaximum frequency is assumed to be 5MHz\n=> Low-Pass filter needs a capacits of 15pF"
     (at 63.5 29.845 0)
