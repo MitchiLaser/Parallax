@@ -29,20 +29,38 @@ round_prec = 8
 
 
 # calculate the resistor and capacitor ratio for the attenuator
+# see equation 1.12 in the documentation
 Attenuator_Resistor_ratio = (2 * max(In_Ranges)) / U_max - 1  # R_1 / R_2
-print(f"Resistor Ratio for the Attenuator: R_1 / R_2 = {Attenuator_Resistor_ratio}")
+print(f"Resistor Ratio for the Attenuator: R_1 / R_2 = C_2 / C_1 = {Attenuator_Resistor_ratio}")
 
 # the amplifier has to map a smaller voltage range to the range of the maximum input voltage since the attenuator stays the same for each input range
+# for the largest input range the factor is 1, all the others need to be scaled to match the highest range.
 amp_gains = [max(In_Ranges) / i for i in In_Ranges]
 
-# the offset voltage needs to be calculated for each individual input range
-# if only one would be used then this will interfere with the Op-Amp also amplifying the baseline
+# Offset voltage to map the input signal after the attenuator
+# into the range 0V -> 3V (U_max)
+# This offset is also amplified, so it needs to be calculated individually
+# for each input range.
+# Equation 1.15 in the documentation
 offsets = [i / Attenuator_Resistor_ratio for i in In_Ranges]
 
-# correct the offsets to be in the middle:
-corrected_offsets = [(U_aref / (2 * amp_gains[i])) * (1 / Attenuator_Resistor_ratio + 1) for i in range(len(In_Ranges))]
+# correct the offsets to be in the middle.
+# Originally the offset is calculated to be in the middle between 0V and U_max, but
+# U_max is lower than the reference voltage U_aref.
+# Now: Correct the offset so that the input signal is exactly in the middle of the ADC range,
+# which is U_aref / 2, but keep the input range still in the range of 0V to U_max.
+# This gives a small window between GND and a 0V input and a second window between U_max and U_aref.
+# The calculus is a little more complicated: It maps a 0V input to (U_aref / 2) * (1 / gain), because the signal is amplified:
+#    U_+ * R_1 / (R_1 + R_2) = U_Aref / (2 * gain[i])  (modification of eq. 1.4 with U_in = 0V)
+# This can be rearranged to:
+# U_+ = (U_aref / (2 * gain[i])) * (1 + 1 / Attenuator_Resistor_ratio)
+corrected_offsets = [(U_aref / (2 * amp_gains[i])) * (1 + 1 / Attenuator_Resistor_ratio) for i in range(len(In_Ranges))]
 
-# now calculate the resistor ratios for the voltage follower providing the offset voltage
+# now calculate the resistor ratios for the voltage divider
+# to generate the corrected offset voltage from the 3.3V voltage source (= U_aref)
+# You can use the voltage divider equation U_reference_corrected = U_aref * R_2 / (R_1 + R_2)
+# and restructure it to get the resistor ratio R_1 / R_2:
+#    R_1 / R_2 = U_aref / U_reference_corrected - 1
 resistor_ratios = [U_aref / i - 1 for i in corrected_offsets]
 
 

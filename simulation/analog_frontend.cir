@@ -1,99 +1,25 @@
 * Analog Frontend
 
-* use the MCP6001 OP-Amp model
-.include libs/MCP6001.sub
-* Instantiate the op amp like this:
-* XOP1 IN+ IN- VCC VSS OUT MCP6001
-*
-* Use the BAS40 Diode model
-.include libs/BAS40.sub
-* Initiate a diode like this:
-* D1 N+ N- DI_BAS40
+.include libs/analog_frontend.sub
+* Instantiate like this:
+* XAFEn IN OUT AnalogFrontend
 
-* Perform the simulation with different parameters.
-* Unfortunately the SIN(...) function cannot be used in
-* combination with a list
-* Therefore the workaround is to just change the 3
-* parameters manually after every run
-*
-* Amplitudes of the sine wave
-*  15, 5, 2, 0.5
-.param pamplitude=15
-* Resistor of the amplifier (multiplexer)
-*  ??
-.param pamp=100K
-* Resistor of the Ref voltage generator (multiplexer)
-*  ??
-.param pref=10K
+* This is a list of all the parameters in use
+* Amplitudes of the sine wave: 15, 5, 2, 0.5
+* Resistor of the amplifier (multiplexer): ???
+* Resistor of the Ref voltage generator (multiplexer): ???
 
-* Here are some fixed parameters used across the whole simulation
-* The internal resistance of the multiplexer
-* Somewhere between 150Ω and 80Ω 
-.param rmul=100
-
-
-* Supply voltage
-V1 Vcc 0 DC 3.3
-* The sum of all capacitors between Vcc and GND in the circuit
-Csum Vcc 0 200n
-
-* Generate the reference voltage
-* Fixed Resistor:
-RrefF Vcc VrefOut 10K
-* Now there is the variable reistor
-* The multiplexer itself introduces some resistance
-RrefV VrefOut 0 {rmul + pref}
-* Voltage follower of the op amp
-XOP1 VrefOut VOP1out Vcc 0 VOP1out MCP6001
-* Capacitor at the attenuator
-Cref VrefOut 0 220nF
-
-* Generate the input signal
-Vin Vin 0 SIN(0 {pamplitude} 1000)
-
-* First input stage: The attenuator
-* (Possibly the analog coupling for the input signal can also be simulated)
-* Attenuator
-Rin1 Vin VAttOut 90K
-Rin2 VAttOut VOP1out 10K
-Cin1 Vin VattOut 100pF
-Cin2 VattOut VOP1out 900pF
-* Add clamping diodes
-DinG 0 VattOut DI_BAS40
-DinV VattOut Vcc DI_BAS40
-
-* Second input stage: The Amplifier
-XOP2 VattOut VAmpF Vcc 0 VOP2out MCP6001
-* RampF VOP2out VAmpF 10k
-* RampV VAmpF 0 {rmul + pamp} 
-RampF VOP2out VAmpF 1K
-RampV VAmpF 0 1G
-
-* Low pass filter and clamping
-Rplf VOP2out Vadc 1.6M
-Clpf Vadc 0 10p
-DadcG 0 Vadc DI_BAS40
-DadcV Vadc Vcc DI_BAS40
-
-* Simulate the input impedance of the Pico ADC
-* more information on this in the schematics
-Rpico Vadc VadcR 100K
-Cpico VadcR 0 1p
-
-
-* Pseudo 9 bit ADC, quantisation only
-* This does not take the sampling rate into account
-Bin VADCout 0 V={floor(V(VadcR)/(V(Vcc)/(2**9)) + 0.5) * (V(Vcc)/(2**9))}
-
+* try out the analog frontend on a sinusodial input signal
+Vsource Vsource 0 SIN(0 15 1000)
+.param pamp=1G
+.param pref=10k
+XAFE1 Vsource VAFEout1 AnalogFrontend
 
 .tran 100ns 2ms
 
 .control
 run
-*plot v(Vcc) title "Vcc"
-plot v(VrefOut) v(VOP1out) title "Vref before and after voltage follower"
-plot v(Vin) v(VAttOut) v(VOP2out) v(Vadc) title "Vin, after attenuator, after amplifier and LPF"
-plot v(VadcR) v(VADCout) title "ADC voltage before and after quantisation"
+plot v(Vsource) v(VAFEout1) title "input and output voltage"
 .endc
 .end
 
