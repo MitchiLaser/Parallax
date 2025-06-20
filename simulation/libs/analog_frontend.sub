@@ -23,7 +23,7 @@ Csum Vcc 0 200n
 
 * Generate the reference voltage
 * Fixed Resistor:
-RrefF Vcc VrefOut 10K
+RrefF Vcc VrefOut 90.9K
 * Now there is the variable reistor
 * The multiplexer itself introduces some resistance
 RrefV VrefOut 0 {rmul + pref}
@@ -59,7 +59,7 @@ DadcV Vadc Vcc DI_BAS40
 * Simulate the input impedance of the Pico ADC
 * more information on this in the schematics
 Rpico Vadc VadcR 100K
-Cpico VadcR 0 1p
+Cpico Vadc 0 1p
 
 * Pseudo 9 bit ADC, quantisation only
 * This does not take the sampling rate into account

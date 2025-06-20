@@ -1678,8 +1678,12 @@
 		)
 		(symbol "power:+3V3"
 			(power)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1779,8 +1783,7 @@
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(hide yes)
-					(name "+3V3"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1800,8 +1803,12 @@
 		)
 		(symbol "power:GND"
 			(power)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1877,8 +1884,7 @@
 				(pin power_in line
 					(at 0 0 270)
 					(length 0)
-					(hide yes)
-					(name "GND"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3109,12 +3115,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 96.52 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3175,12 +3182,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x02, script generated"
 			(at 53.34 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3242,12 +3250,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 133.35 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3306,12 +3315,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 232.41 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3372,12 +3382,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 63.5 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3410,8 +3421,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 145.415 145.415 90)
+		(property "Value" "11k5"
+			(at 145.542 146.558 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3437,12 +3448,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 145.415 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3495,7 +3507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
 			(at 71.12 92.71 0)
 			(effects
 				(font
@@ -3504,12 +3516,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "1MHz, Low-Power Op Amp, DFN-8"
 			(at 71.12 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Reichelt Part-Number" "MCP 6002-I/SN"
@@ -3602,12 +3615,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 53.34 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3666,12 +3680,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 54.61 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3700,7 +3715,7 @@
 		(fields_autoplaced yes)
 		(uuid "2b8b21c9-c315-41ba-9edf-e83ee4736b51")
 		(property "Reference" "R2"
-			(at 105.41 53.34 0)
+			(at 105.41 53.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3708,8 +3723,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 105.41 55.88 0)
+		(property "Value" "169k"
+			(at 105.41 55.8799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3735,12 +3750,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 102.87 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -3804,12 +3820,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 240.03 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3869,12 +3886,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 116.205 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -3907,8 +3925,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 130.175 145.415 90)
+		(property "Value" "115k"
+			(at 130.048 146.558 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3934,12 +3952,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 130.175 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4001,12 +4020,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 36.83 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4038,7 +4058,7 @@
 				)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "4k7"
 			(at 166.37 143.51 90)
 			(effects
 				(font
@@ -4064,12 +4084,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 166.37 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4133,12 +4154,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 247.65 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4174,8 +4196,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 137.795 145.415 90)
+		(property "Value" "1k62"
+			(at 137.668 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4201,12 +4223,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 137.795 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4268,12 +4291,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 247.65 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4334,12 +4358,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 173.99 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4372,8 +4397,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 147.955 145.415 90)
+		(property "Value" "2k49"
+			(at 147.828 146.558 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4399,12 +4424,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 147.955 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4440,8 +4466,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 132.715 145.415 90)
+		(property "Value" "20k5"
+			(at 132.588 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4467,12 +4493,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 132.715 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4501,7 +4528,7 @@
 		(fields_autoplaced yes)
 		(uuid "56f958ee-3ff4-4df3-b822-9ed1b5a29eea")
 		(property "Reference" "R1"
-			(at 55.88 76.2 0)
+			(at 55.88 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4509,8 +4536,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 55.88 78.74 0)
+		(property "Value" "90k9"
+			(at 55.88 78.7399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4536,12 +4563,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 53.34 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4605,12 +4633,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 182.88 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4659,7 +4688,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT4052.pdf"
+		(property "Datasheet" "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf"
 			(at 145.415 127.635 0)
 			(effects
 				(font
@@ -4668,12 +4697,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Dual Analog Multiplexer 4 to 1 line"
 			(at 145.415 127.635 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "16"
@@ -4778,12 +4808,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 49.53 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4832,7 +4863,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
 			(at 167.64 67.31 0)
 			(effects
 				(font
@@ -4841,12 +4872,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "1MHz, Low-Power Op Amp, DFN-8"
 			(at 167.64 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Reichelt Part-Number" "MCP 6002-I/SN"
@@ -4939,12 +4971,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 154.94 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5003,12 +5036,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 153.035 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5072,12 +5106,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 92.71 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5138,12 +5173,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 208.28 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5205,12 +5241,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 148.59 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5236,7 +5273,7 @@
 		(fields_autoplaced yes)
 		(uuid "909585f2-72eb-49d4-94c5-e980f9dad613")
 		(property "Reference" "R14"
-			(at 185.42 73.66 0)
+			(at 185.42 73.6599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5244,8 +5281,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 185.42 76.2 0)
+		(property "Value" "75k"
+			(at 185.42 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5271,12 +5308,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 182.88 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5340,12 +5378,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 173.99 140.335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5405,12 +5444,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
 			(at 251.46 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5470,12 +5510,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Trimmable capacitor, small symbol"
 			(at 85.09 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5539,12 +5580,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 116.205 131.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5607,12 +5649,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 125.095 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5673,12 +5716,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 156.21 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5738,12 +5782,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 251.46 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5776,8 +5821,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 142.875 145.415 90)
+		(property "Value" "38k3"
+			(at 143.002 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5803,12 +5848,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 142.875 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5871,12 +5917,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 116.205 135.255 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5937,12 +5984,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 92.71 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5996,7 +6044,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-BAS40series.-DataSheet-v01_00-EN.pdf?fileId=5546d4626d66c2b1016d73f7e0bb20ca"
+		(property "Datasheet" "http://www.vishay.com/docs/85701/bas40v.pdf"
 			(at 236.982 62.23 0)
 			(effects
 				(font
@@ -6005,12 +6053,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 0.2A Dual Small Signal Schottky Diodes"
 			(at 240.03 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Reichelt Part-Number" "BAS 40-04 SMD"
@@ -6076,7 +6125,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-BAS40series.-DataSheet-v01_00-EN.pdf?fileId=5546d4626d66c2b1016d73f7e0bb20ca"
+		(property "Datasheet" "http://www.vishay.com/docs/85701/bas40v.pdf"
 			(at 137.922 59.69 0)
 			(effects
 				(font
@@ -6085,12 +6134,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 0.2A Dual Small Signal Schottky Diodes"
 			(at 140.97 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Reichelt Part-Number" "BAS 40-04 SMD"
@@ -6166,12 +6216,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 215.9 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6207,7 +6258,7 @@
 				)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "4k7"
 			(at 166.37 140.335 90)
 			(effects
 				(font
@@ -6233,12 +6284,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 166.37 140.335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6302,12 +6354,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 113.03 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6366,12 +6419,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 215.9 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6432,12 +6486,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 36.83 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6466,7 +6521,7 @@
 		(fields_autoplaced yes)
 		(uuid "e8f4869d-0481-4d40-ba8b-ecead21eaac3")
 		(property "Reference" "R3"
-			(at 105.41 71.12 0)
+			(at 105.41 71.1199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6474,8 +6529,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 105.41 73.66 0)
+		(property "Value" "18k7"
+			(at 105.41 73.6599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6501,12 +6556,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 102.87 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6560,7 +6616,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
 			(at 254 137.16 0)
 			(effects
 				(font
@@ -6569,12 +6625,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "1MHz, Low-Power Op Amp, DFN-8"
 			(at 254 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Reichelt Part-Number" "MCP 6002-I/SN"
@@ -6667,12 +6724,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 168.275 130.175 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6705,8 +6763,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
-			(at 135.255 145.415 90)
+		(property "Value" "7k15"
+			(at 135.382 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6732,12 +6790,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor"
 			(at 135.255 144.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
