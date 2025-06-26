@@ -5,10 +5,12 @@
 # In the beginning all the input ranges are defined for the analog inputs in the list $In_Ranges$
 # These have to be mapped to a voltage between 0V and $U_{max}$.
 # The script calculates the resistor and capacitor ratio for the attenuator.
-
+#
 # Afterwards it compares all the input ranges with the largest one in the list and calculates
 # the gains for the op-amp and the reference voltage for all the input ranges.
-
+#
+# This idealised computation is used as a basis to find the best resistor values from the E48 series
+# for the attenuator, the reference voltage and the amplifier.
 """
 
 
@@ -95,7 +97,7 @@ print_results_table(
 
 # Now find the right resistors from the E48 row
 E48 = [1.00, 1.05, 1.10, 1.15, 1.21, 1.27, 1.33, 1.40, 1.47, 1.54, 1.62, 1.69, 1.78, 1.87, 1.96, 2.05, 2.15, 2.26, 2.37, 2.49, 2.61, 2.74, 2.87, 3.01, 3.16, 3.32, 3.48, 3.65, 3.83, 4.02, 4.22, 4.42, 4.64, 4.87, 5.11, 5.36, 5.62, 5.90, 6.19, 6.49, 6.81, 7.15, 7.50, 7.87, 8.25, 8.66, 9.09, 9.53]
-Resistors = sorted([E48[i] * 10**j * 1000 for i in range(len(E48)) for j in range(3)])  # E48 resistors in kOhm, from 1 Ohm to 9.53 kOhm
+Resistors = sorted([E48[i] * 10**j * 1000 for i in range(len(E48)) for j in range(3)])  # E48 resistors in kOhm, from 1 kOhm to 953 kOhm
 
 # There are the following parameters that need to be optimized:
 # 1. The attenuator resistors, just take two with the right ratio and it will work for all input ranges.
@@ -137,7 +139,7 @@ print(f"Variable resistors and Ratios: {''.join(['\n\t' + str(round(Resistors[i]
 # The resistor ratio should be calculated with the following relation: Ratio[i] = Amp_gains[i] - 1
 # because this is a non inverting amplifier (Equation 1.17)
 target_ratios = [i - 1 for i in amp_gains]
-print(f"Target Ratios: {', '.join([str(i) for i in target_ratios])}")
+print(f"\nTarget Ratios: {', '.join([str(i) for i in target_ratios])}")
 best_fixed = 0
 best_variable = [0, 0, 0, 0]
 # the first resistor is fixed whereas the second one is variable
@@ -159,6 +161,6 @@ for i in range(len(Resistors)):
     if error_squares < error_best:
         best_fixed = i
         best_variable = [j for j in current_best]
-print("\nBest choices for the amplifier gains:")
+print("Best choices for the amplifier gains:")
 print(f"Fixed resistor: {round(Resistors[best_fixed] / 1000, round_prec)} kΩ")
 print(f"Variable resistors and Ratios: {''.join(['\n\t' + str(round(Resistors[i] / 1000, round_prec)) + ' kΩ    ' + str(round(Resistors[best_fixed] / (Resistors[i] + resistor_multiplexer), round_prec)) for i in best_variable])}")

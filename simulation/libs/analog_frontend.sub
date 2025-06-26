@@ -24,7 +24,7 @@ Csum Vcc 0 200n
 * Generate the reference voltage
 * Fixed Resistor:
 RrefF Vcc VrefOut 90.9K
-* Now there is the variable reistor
+* Now there is the variable resistor
 * The multiplexer itself introduces some resistance
 RrefV VrefOut 0 {rmul + pref}
 * Voltage follower of the op amp
@@ -35,20 +35,17 @@ Cref VrefOut 0 220nF
 * First input stage: The attenuator
 * (Possibly the analog coupling for the input signal can also be simulated)
 * Attenuator
-Rin1 Vin VAttOut 90K
-Rin2 VAttOut VOP1out 10K
-Cin1 Vin VattOut 100pF
-Cin2 VattOut VOP1out 900pF
-* Add clamping diodes
-DinG 0 VattOut DI_BAS40
-DinV VattOut Vcc DI_BAS40
+Rin1 Vin VAttOut 169K
+Rin2 VAttOut VOP1out 18.7K
+* The first one is a sum of the fixed 91pF capacitor
+* and the variable trimmer cpacitor in its ideal position
+Cin1 Vin VattOut 101pF
+Cin2 VattOut VOP1out 910pF
 
 * Second input stage: The Amplifier
 XOP2 VattOut VAmpF Vcc 0 VOP2out MCP6001
-* RampF VOP2out VAmpF 10k
-* RampV VAmpF 0 {rmul + pamp} 
-RampF VOP2out VAmpF 1K
-RampV VAmpF 0 1G
+RampF VOP2out VAmpF 75k
+RampV VAmpF 0 {rmul + pamp} 
 
 * Low pass filter and clamping
 Rplf VOP2out Vadc 1.6M

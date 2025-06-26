@@ -6,13 +6,14 @@
 
 * This is a list of all the parameters in use
 * Amplitudes of the sine wave: 15, 5, 2, 0.5
-* Resistor of the amplifier (multiplexer): ???
-* Resistor of the Ref voltage generator (multiplexer): ???
+* Resistor of the amplifier (multiplexer): 1G, 38.3k, 11.5k, 2.49k
+* Resistor of the Ref voltage generator (multiplexer): 115k, 20.5k, 7.15k, 1.62k
 
 * try out the analog frontend on a sinusodial input signal
-Vsource Vsource 0 SIN(0 15 1000)
-.param pamp=1G
-.param pref=10k
+Vsource Vsource 0 SIN(0 0.5 1000)
+* Vsource Vsource 0 PULSE(-1 1 500US 1NS 1NS 500US 1MS 10)
+.param pamp=2.49k
+.param pref=1.62k
 XAFE1 Vsource VAFEout1 AnalogFrontend
 
 .tran 100ns 2ms
@@ -20,6 +21,7 @@ XAFE1 Vsource VAFEout1 AnalogFrontend
 .control
 run
 plot v(Vsource) v(VAFEout1) title "input and output voltage"
+* plot v(VAFEout1) title "ADC signal"
 .endc
 .end
 
