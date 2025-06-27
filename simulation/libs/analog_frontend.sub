@@ -6,11 +6,6 @@
 * Instantiate the op amp like this:
 * XOP1 IN+ IN- VCC VSS OUT MCP6001
 *
-* Use the BAS40 Diode model
-.include BAS40.sub
-* Initiate a diode like this:
-* D1 N+ N- DI_BAS40
-
 * Here are some fixed parameters used across the whole simulation
 * The internal resistance of the multiplexer
 * Somewhere between 150Ω and 80Ω 
@@ -50,8 +45,6 @@ RampV VAmpF 0 {rmul + pamp}
 * Low pass filter and clamping
 Rplf VOP2out Vadc 1.6M
 Clpf Vadc 0 10p
-DadcG 0 Vadc DI_BAS40
-DadcV Vadc Vcc DI_BAS40
 
 * Simulate the input impedance of the Pico ADC
 * more information on this in the schematics
