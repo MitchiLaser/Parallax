@@ -1354,328 +1354,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:BAS40-04"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0.635 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "BAS40-04"
-				(at -6.35 5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-				(at -6.35 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.vishay.com/docs/85701/bas40v.pdf"
-				(at -3.048 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "40V 0.2A Dual Small Signal Schottky Diodes"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Schottky, Diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "BAS40-04_0_1"
-				(polyline
-					(pts
-						(xy -4.445 3.81) (xy -4.445 1.27) (xy -2.54 2.54) (xy -4.445 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 2.54) (xy -1.27 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.175 1.27) (xy -3.175 1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 3.81) (xy -1.905 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -3.175 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -2.54 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 3.81) (xy -1.905 3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 2.54) (xy 1.905 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 2.54)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 3.81) (xy 1.905 1.27) (xy 3.81 2.54) (xy 1.905 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 1.27) (xy 3.175 1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 3.81) (xy 4.445 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 1.27) (xy 3.175 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 1.27) (xy 3.81 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.445 3.81) (xy 4.445 3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "BAS40-04_1_1"
-				(pin passive line
-					(at -7.62 2.54 0)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 5.08)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3V3"
 			(power)
 			(pin_numbers
@@ -1925,7 +1603,7 @@
 		)
 		(uuid "1e237671-e7a0-47eb-abe9-c9ff51298c79")
 	)
-	(text "- map analog voltages from a defined range ±Vin to 0V -> 3V3 for the ADC\n- Clamping for Voltages outside the input range"
+	(text "- map analog voltages from a defined range ±Vin to 0V -> 3V3 for the ADC"
 		(exclude_from_sim no)
 		(at 189.23 172.72 0)
 		(effects
@@ -1938,7 +1616,7 @@
 	)
 	(text "ADC Inputs of Raspberry Pi Pico:\nhttps://forums.raspberrypi.com/viewtopic.php?t=344780\npost 598\ninput impedance: 100K\ninput capacitance: 1pF"
 		(exclude_from_sim no)
-		(at 224.79 45.466 0)
+		(at 223.774 56.896 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1957,17 +1635,6 @@
 			(justify left bottom)
 		)
 		(uuid "3d38fa15-ab57-4744-a6bf-2d702d9d00c6")
-	)
-	(text "Clamping diode"
-		(exclude_from_sim no)
-		(at 232.664 54.102 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4196104f-ce69-4cd5-8386-819ab5e7d8fa")
 	)
 	(text "AC/DC Coupling"
 		(exclude_from_sim no)
@@ -2035,16 +1702,6 @@
 		)
 		(uuid "cf2a4159-dc0a-4a42-b340-6e78f567d17f")
 	)
-	(text "Note:\nThere were clamping diodes placed before the input of the opamp,\nbut they messed arround with teh input signal.\nFurthermore, the tvs diodes inside the opv should be reliable\nenough and the input current max rating is noly hit at input\nvoltages larger than 300V. Therefore they were removed."
-		(exclude_from_sim no)
-		(at 162.56 37.084 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "d4cab9d6-a6de-4d76-8da3-51e7552300ff")
-	)
 	(text "stabilize Supply-Voltage for the Op-Amp"
 		(exclude_from_sim no)
 		(at 234.95 121.92 0)
@@ -2083,6 +1740,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0685c263-8329-4087-b376-8f51f0470f57")
+	)
+	(junction
+		(at 232.41 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "086d66f5-4e1d-4fed-a4e5-c17619204c30")
 	)
 	(junction
 		(at 53.34 85.09)
@@ -2149,12 +1812,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6017f3e3-63ef-4f01-8dbd-5a56e9645194")
-	)
-	(junction
-		(at 240.03 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "614b3396-6945-46d5-a8a0-a452f35cec47")
 	)
 	(junction
 		(at 116.205 127.635)
@@ -2344,7 +2001,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 67.31) (xy 240.03 67.31)
+			(xy 215.9 67.31) (xy 232.41 67.31)
 		)
 		(stroke
 			(width 0)
@@ -2381,16 +2038,6 @@
 			(type default)
 		)
 		(uuid "3478983b-475f-4804-b04a-501d3e9fd850")
-	)
-	(polyline
-		(pts
-			(xy 143.51 44.45) (xy 143.51 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "384cd0f2-f190-472a-bee1-c801a7fe1de0")
 	)
 	(wire
 		(pts
@@ -2724,16 +2371,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 67.31) (xy 257.81 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6fed142-39bb-4ee8-bf8e-7c67ce33d457")
-	)
-	(wire
-		(pts
 			(xy 36.83 97.79) (xy 36.83 100.33)
 		)
 		(stroke
@@ -2974,6 +2611,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 67.31) (xy 247.65 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7eef6e2-030a-4b04-b7cd-1617ed3179bd")
+	)
+	(wire
+		(pts
 			(xy 173.99 140.335) (xy 190.5 140.335)
 		)
 		(stroke
@@ -3016,7 +2663,7 @@
 	)
 	(hierarchical_label "ADC"
 		(shape output)
-		(at 257.81 67.31 0)
+		(at 247.65 67.31 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3168,71 +2815,6 @@
 			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 232.41 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "16d550ac-44e6-4a3f-9a82-28b54c1ea922")
-		(property "Reference" "#PWR020"
-			(at 232.41 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 228.6 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 232.41 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 232.41 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 232.41 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fce27d21-c583-4ce7-afd6-8a3a21817b59")
-		)
-		(instances
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
-					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -3678,7 +3260,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 240.03 67.31 180)
+		(at 232.41 67.31 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3687,7 +3269,7 @@
 		(fields_autoplaced yes)
 		(uuid "30242003-49bd-4a61-a3a7-136a1783f0c2")
 		(property "Reference" "TP9"
-			(at 242.57 69.342 0)
+			(at 234.95 69.342 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3696,7 +3278,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 242.57 71.882 0)
+			(at 234.95 71.882 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3705,7 +3287,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
-			(at 234.95 67.31 0)
+			(at 227.33 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3714,7 +3296,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 234.95 67.31 0)
+			(at 227.33 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3723,7 +3305,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 240.03 67.31 0)
+			(at 232.41 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4144,71 +3726,6 @@
 			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 247.65 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4e421a25-3f4c-43b1-a0be-7a6eb7f0ffb5")
-		(property "Reference" "#PWR021"
-			(at 247.65 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 251.46 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 247.65 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 247.65 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 247.65 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c03ea9bf-8c83-42d2-9dcd-705aa2fef5d0")
-		)
-		(instances
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -5849,87 +5366,6 @@
 			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
 					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:BAS40-04")
-		(at 240.03 64.77 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d6fd84e2-6ccb-4031-a1c9-6c9f20950480")
-		(property "Reference" "D2"
-			(at 240.03 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BAS40-04"
-			(at 240.03 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 233.68 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/85701/bas40v.pdf"
-			(at 236.982 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "40V 0.2A Dual Small Signal Schottky Diodes"
-			(at 240.03 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Reichelt Part-Number" "BAS 40-04 SMD"
-			(at 240.03 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "32dcb90d-d19e-44b0-99b6-ff537dcb114e")
-		)
-		(pin "1"
-			(uuid "b5279f86-16eb-48b7-8386-377b1787fa6b")
-		)
-		(pin "2"
-			(uuid "2d682d7a-a47b-4d2d-9395-b97fb499f0ca")
-		)
-		(instances
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/89a1e200-d02e-41b4-8035-131adfe663f2"
-					(reference "D2")
 					(unit 1)
 				)
 			)
