@@ -775,17 +775,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "R2R Ladder"
-		(exclude_from_sim no)
-		(at 29.21 25.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "58aa6195-7bf2-49c4-aefe-ba345f502855")
-	)
 	(text "Buffer"
 		(exclude_from_sim no)
 		(at 96.52 52.07 0)
@@ -808,17 +797,6 @@
 		)
 		(uuid "8d51a62d-3afd-474f-8978-79d8c13a738c")
 	)
-	(text "TODO: Active Termination\n\nhttps://habr.com/en/articles/523896/"
-		(exclude_from_sim no)
-		(at 205.105 71.755 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c72de13f-d02c-45e4-9503-9c5bda3da200")
-	)
 	(text "8-Bit R2R Ladder DAC (parallel atached)\nAmplifier and 50Ω driver"
 		(exclude_from_sim no)
 		(at 186.69 173.99 0)
@@ -830,7 +808,7 @@
 		)
 		(uuid "d87c77b8-e6df-4c56-8a80-d3346fe950ff")
 	)
-	(text "This Op-Amp is powerfull enough\nto drive a 50Ω line"
+	(text "This Op-Amp is hopefully powerfull\nenough to drive a 50Ω line. Maybe it\nwould be better to switch to 600Ω?"
 		(exclude_from_sim no)
 		(at 101.6 71.12 0)
 		(effects
@@ -841,7 +819,7 @@
 		)
 		(uuid "ecd47050-a173-488c-bd05-d8979fef81c9")
 	)
-	(text "INFORMATION:\n\nThis is a design for a R2R-Ladder DAC\nthat can be used to generate Output signals\n(AWG) but it is not yet in use. Meybe one day\nthis can be added to the project."
+	(text "INFORMATION:\n\nThis design was never intended to be\nused in this project. However, it came out\nto be working good enough under a High Z\nload that it can be considered usefull."
 		(exclude_from_sim no)
 		(at 235.966 28.956 0)
 		(effects
@@ -853,7 +831,7 @@
 	)
 	(text "output impedance of R2R ladder: R = 2K2Ω\nMaximum frequency is assumed to be 5MHz\n=> Low-Pass filter needs a capacits of 15pF"
 		(exclude_from_sim no)
-		(at 63.5 29.845 0)
+		(at 54.864 25.146 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -869,28 +847,10 @@
 		(uuid "04e9edd0-313b-4e15-b9d3-889ee2772c60")
 	)
 	(junction
-		(at 45.72 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0d2d7be7-9f6b-407f-a510-b1abaaa06257")
-	)
-	(junction
-		(at 45.72 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "11329750-adb1-4ed1-ac45-4f7306fe54e8")
-	)
-	(junction
 		(at 121.92 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "147813ae-ea86-41e5-97c5-33ecb173f315")
-	)
-	(junction
-		(at 45.72 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3bbf0ad8-47fd-44eb-88f5-88f8d54b1228")
 	)
 	(junction
 		(at 111.76 36.195)
@@ -903,12 +863,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5bd73246-835f-413c-af67-b59ac9603cf2")
-	)
-	(junction
-		(at 45.72 123.19)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "63833a00-ce66-473a-a7f0-b530a383f0d4")
 	)
 	(junction
 		(at 69.85 35.56)
@@ -929,24 +883,6 @@
 		(uuid "740e7f02-a9c2-4b65-a622-07e23698e6e2")
 	)
 	(junction
-		(at 45.72 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7a38b4dd-481e-4991-bc51-a3be87195925")
-	)
-	(junction
-		(at 45.72 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "950885f0-c4ea-475a-bd41-af99282e30d2")
-	)
-	(junction
-		(at 45.72 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "954f2dcb-2ed8-4fe3-8cde-2f3fafe1aaa4")
-	)
-	(junction
 		(at 45.72 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -959,52 +895,16 @@
 		(uuid "ac54c6e1-b133-4978-872a-932588d828a0")
 	)
 	(junction
-		(at 45.72 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ac65dda3-9385-4584-90e2-4008f9a1bb36")
-	)
-	(junction
-		(at 45.72 64.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b4633cda-a922-4448-89be-412e8c384c82")
-	)
-	(junction
 		(at 45.72 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b4db600e-f063-4a7f-b107-0d62f1d3b0e9")
 	)
 	(junction
-		(at 45.72 97.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b9420a80-242f-44a0-957d-a0c2776faedf")
-	)
-	(junction
-		(at 45.72 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bc7cdd48-733e-4fe5-bdbb-8868885b8f4a")
-	)
-	(junction
-		(at 45.72 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c8ade1ce-4b1f-4c1b-9159-7ae76c527198")
-	)
-	(junction
 		(at 45.72 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d03bfae1-4d1d-4b29-9fbc-f3cf07765d13")
-	)
-	(junction
-		(at 45.72 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d1302f18-7e6a-4b96-94f2-185a87625cf3")
 	)
 	(junction
 		(at 45.72 134.62)
@@ -1017,32 +917,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1fbd2cf-8f5b-4cfa-962b-a729e0df29bb")
-	)
-	(junction
-		(at 45.72 147.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f3658263-0eff-4197-b427-7d7604f29de6")
-	)
-	(wire
-		(pts
-			(xy 45.72 114.3) (xy 49.53 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0693e553-f328-4132-9df5-bb8bb907ba06")
-	)
-	(wire
-		(pts
-			(xy 45.72 139.7) (xy 49.53 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0a871190-52d8-44d2-8c5d-c54a8916c22e")
 	)
 	(wire
 		(pts
@@ -1066,36 +940,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 73.66) (xy 49.53 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "166ca030-ee90-4658-b9d7-982e20450655")
-	)
-	(wire
-		(pts
-			(xy 45.72 97.79) (xy 49.53 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "255efc0b-b30b-4b1b-a256-0e81aa8cfd54")
-	)
-	(wire
-		(pts
-			(xy 45.72 106.68) (xy 49.53 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "284874ce-a233-4053-a424-e20be5795865")
-	)
-	(wire
-		(pts
 			(xy 106.68 62.23) (xy 121.92 62.23)
 		)
 		(stroke
@@ -1103,16 +947,6 @@
 			(type default)
 		)
 		(uuid "3184b7ea-0d37-4153-9fd8-c19e3be29c7a")
-	)
-	(wire
-		(pts
-			(xy 45.72 48.26) (xy 49.53 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3267f455-183a-416b-a06d-7b80aee20747")
 	)
 	(wire
 		(pts
@@ -1136,16 +970,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 90.17) (xy 49.53 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3efac179-7eab-49d7-be5b-a21a6f91b725")
-	)
-	(wire
-		(pts
 			(xy 121.92 45.72) (xy 134.62 45.72)
 		)
 		(stroke
@@ -1153,16 +977,6 @@
 			(type default)
 		)
 		(uuid "3ff2beda-8ea6-4c2d-91f5-828d6320897d")
-	)
-	(wire
-		(pts
-			(xy 45.72 130.81) (xy 49.53 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4fc546e9-484f-4285-83b6-4d49b0060ab8")
 	)
 	(wire
 		(pts
@@ -1183,16 +997,6 @@
 			(type default)
 		)
 		(uuid "54873566-81ee-406b-abd3-0fafa5816dd8")
-	)
-	(wire
-		(pts
-			(xy 45.72 147.32) (xy 49.53 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c9479e1-f393-450a-8654-9e29a5ebc8c5")
 	)
 	(wire
 		(pts
@@ -1223,16 +1027,6 @@
 			(type default)
 		)
 		(uuid "5f33985c-6ddb-43a5-9a38-a0bd39c2f3ee")
-	)
-	(wire
-		(pts
-			(xy 45.72 40.64) (xy 49.53 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c7cb634-fbf1-46e0-8dab-a50e3b056765")
 	)
 	(wire
 		(pts
@@ -1306,16 +1100,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 123.19) (xy 49.53 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8a8af6f-0b27-4888-9d6f-cb8e1fe9c879")
-	)
-	(wire
-		(pts
 			(xy 134.62 45.72) (xy 149.86 45.72)
 		)
 		(stroke
@@ -1386,16 +1170,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 64.77) (xy 49.53 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d845455b-c8e4-4e6e-9ca2-28a5aea1a86c")
-	)
-	(wire
-		(pts
 			(xy 52.07 35.56) (xy 69.85 35.56)
 		)
 		(stroke
@@ -1406,17 +1180,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 81.28) (xy 49.53 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dde293b3-fd47-4204-b5a7-3a604ced8d39")
-	)
-	(wire
-		(pts
-			(xy 45.72 151.13) (xy 45.72 156.21)
+			(xy 45.72 151.13) (xy 45.72 158.75)
 		)
 		(stroke
 			(width 0)
@@ -1433,16 +1197,6 @@
 			(type default)
 		)
 		(uuid "f58d8602-effb-43b6-ba78-9b3610fddf97")
-	)
-	(wire
-		(pts
-			(xy 45.72 57.15) (xy 49.53 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f5ac6d97-e6c2-4523-90d6-74484df8b903")
 	)
 	(hierarchical_label "B5"
 		(shape input)
@@ -1553,7 +1307,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04aec113-9b54-4388-87f8-ee3563030964")
-		(property "Reference" "C2"
+		(property "Reference" "C19"
 			(at 115.57 29.21 90)
 			(effects
 				(font
@@ -1617,6 +1371,12 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "C19")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -1628,7 +1388,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "077a2764-bf6c-41cf-86b3-f27703f2c4e5")
-		(property "Reference" "R5"
+		(property "Reference" "R39"
 			(at 41.91 99.06 90)
 			(effects
 				(font
@@ -1692,9 +1452,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R5")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R39")
 					(unit 1)
 				)
 			)
@@ -1710,7 +1470,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b0f7c12-4a74-405d-b211-fec28a1f5f28")
-		(property "Reference" "C1"
+		(property "Reference" "C18"
 			(at 73.66 38.1 0)
 			(effects
 				(font
@@ -1776,9 +1536,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "C1")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -1786,7 +1546,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 45.72 163.83 0)
+		(at 38.1 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1794,8 +1554,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b79117c-3a12-4c1b-9cde-cd33f3592ccb")
-		(property "Reference" "#PWR01"
-			(at 45.72 170.18 0)
+		(property "Reference" "#PWR047"
+			(at 38.1 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1804,7 +1564,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 45.72 168.91 0)
+			(at 38.1 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1812,7 +1572,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 45.72 163.83 0)
+			(at 38.1 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1821,7 +1581,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 163.83 0)
+			(at 38.1 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1830,7 +1590,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 163.83 0)
+			(at 38.1 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1847,9 +1607,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "#PWR01")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -1864,7 +1624,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1158069e-b417-426f-a158-43beac8ed109")
-		(property "Reference" "R8"
+		(property "Reference" "R42"
 			(at 41.91 148.59 90)
 			(effects
 				(font
@@ -1928,9 +1688,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R8")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R42")
 					(unit 1)
 				)
 			)
@@ -1946,7 +1706,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "154209a8-9283-47b2-8ca6-3e0125b1106e")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR049"
 			(at 111.76 38.1 0)
 			(effects
 				(font
@@ -1999,27 +1759,33 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 45.72 127 180)
+		(at 45.72 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "19cac7ba-2bee-4837-a92a-e4425cd43788")
-		(property "Reference" "R14"
-			(at 43.18 127 90)
+		(uuid "1cd87975-a84e-406b-a2ba-40b40979ba90")
+		(property "Reference" "R46"
+			(at 43.18 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "2K2"
-			(at 45.72 127 90)
+		(property "Value" "1k1"
+			(at 45.72 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2027,7 +1793,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.498 127 90)
+			(at 47.498 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2036,7 +1802,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 127 0)
+			(at 45.72 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2045,7 +1811,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 127 0)
+			(at 45.72 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2053,7 +1819,7 @@
 			)
 		)
 		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 45.72 127 90)
+			(at 45.72 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2062,102 +1828,21 @@
 			)
 		)
 		(pin "2"
-			(uuid "e5d6d66e-05ed-42cc-9c95-20b717ee0796")
+			(uuid "0f2abac8-a918-43c9-9752-31567121b7cf")
 		)
 		(pin "1"
-			(uuid "688eb08a-2770-4bc8-af44-ceac33660761")
+			(uuid "7f7ab1b2-f0d9-42e4-9c52-3f2c4317748c")
 		)
 		(instances
 			(project "awg"
 				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R14")
+					(reference "R11")
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e240bd1-09d3-475d-88d3-c8820cd3a5c9")
-		(property "Reference" "R19"
-			(at 52.07 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3b2e85df-8043-4832-8ed4-33dc61d6095d")
-		)
-		(pin "1"
-			(uuid "16f57885-0dff-48e8-bd0e-145fa748178e")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R19")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R46")
 					(unit 1)
 				)
 			)
@@ -2172,7 +1857,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e4f7ad2-5be8-40bc-9885-9253515e7394")
-		(property "Reference" "R2"
+		(property "Reference" "R36"
 			(at 41.91 49.53 90)
 			(effects
 				(font
@@ -2236,90 +1921,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e8fe511-376e-4be6-b23d-09f3542c7146")
-		(property "Reference" "R23"
-			(at 52.07 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 143.51 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7f9e3bf1-0437-4934-b703-a7bf2e33e787")
-		)
-		(pin "1"
-			(uuid "ac5c35df-cf57-4d31-827b-ed9f36561ec5")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R23")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R23")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R36")
 					(unit 1)
 				)
 			)
@@ -2334,7 +1938,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "24e50f27-f08e-4630-b064-fc20a64d5bc9")
-		(property "Reference" "R6"
+		(property "Reference" "R40"
 			(at 41.91 115.57 90)
 			(effects
 				(font
@@ -2398,9 +2002,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R6")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R40")
 					(unit 1)
 				)
 			)
@@ -2416,7 +2020,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d80dc91-adfe-4ebb-8ba3-0c1adc6eebde")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR050"
 			(at 111.76 59.69 0)
 			(effects
 				(font
@@ -2469,6 +2073,12 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR050")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2480,7 +2090,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c89209e-ba58-4664-84c0-5fb92bde1974")
-		(property "Reference" "R24"
+		(property "Reference" "R51"
 			(at 153.67 43.18 90)
 			(effects
 				(font
@@ -2544,19 +2154,25 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R51")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 45.72 160.02 0)
+		(at 41.91 158.75 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "3ddbdd54-2227-4cb6-8165-a21575b6dee4")
-		(property "Reference" "R16"
-			(at 48.26 160.02 90)
+		(property "Reference" "R43"
+			(at 41.91 161.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2564,7 +2180,7 @@
 			)
 		)
 		(property "Value" "2K2"
-			(at 45.72 160.02 90)
+			(at 41.91 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2572,7 +2188,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 43.942 160.02 90)
+			(at 41.91 156.972 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2581,7 +2197,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 160.02 0)
+			(at 41.91 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2590,7 +2206,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 160.02 0)
+			(at 41.91 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2598,7 +2214,7 @@
 			)
 		)
 		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 45.72 160.02 90)
+			(at 41.91 158.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2619,9 +2235,90 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R16")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 45.72 127 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "48a476f8-f4a6-48e6-9113-847f77c963ce")
+		(property "Reference" "R49"
+			(at 43.18 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k1"
+			(at 45.72 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 47.498 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 45.72 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Reichelt Part-Number" "RND 1550805 CT"
+			(at 45.72 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ad1663e3-12b9-416f-a756-0e1d0ae7ebd6")
+		)
+		(pin "1"
+			(uuid "a65047ed-977b-4998-8548-8dc10cb683e6")
+		)
+		(instances
+			(project "awg"
+				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R49")
 					(unit 1)
 				)
 			)
@@ -2635,8 +2332,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4953777e-42b1-4433-9f1b-da1330fcf5f7")
-		(property "Reference" "R10"
+		(uuid "4ed6a4d9-60aa-4643-9e60-deddb0ee97f5")
+		(property "Reference" "R45"
 			(at 43.18 60.96 90)
 			(effects
 				(font
@@ -2644,7 +2341,7 @@
 				)
 			)
 		)
-		(property "Value" "2K2"
+		(property "Value" "1k1"
 			(at 45.72 60.96 90)
 			(effects
 				(font
@@ -2688,10 +2385,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "fb3cfe2f-b606-4535-a0c5-9f23fa1ed10e")
+			(uuid "fb6a8954-8ac7-4b08-8e69-ad93554f836f")
 		)
 		(pin "1"
-			(uuid "621c7240-1538-4a88-bc4c-e58f8e800775")
+			(uuid "adc27f4a-22ef-4dc6-812a-69f1645ef354")
 		)
 		(instances
 			(project "awg"
@@ -2700,90 +2397,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 60.96 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5448c5de-b89f-4979-9b7b-53c1403c2348")
-		(property "Reference" "R18"
-			(at 52.07 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5fe93dc0-d5cd-49c5-b2e1-02185a977ff0")
-		)
-		(pin "1"
-			(uuid "d490811b-dd41-4aba-be25-3f289b0fe194")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R18")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R18")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R45")
 					(unit 1)
 				)
 			)
@@ -2799,7 +2415,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5fab79e4-6862-4d09-b6b9-3f6eed4447e2")
-		(property "Reference" "TP2"
+		(property "Reference" "TP20"
 			(at 137.16 41.148 0)
 			(effects
 				(font
@@ -2853,6 +2469,12 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "TP20")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2864,7 +2486,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "64313a53-5fc5-4fb7-8720-0eb9c0158b76")
-		(property "Reference" "R7"
+		(property "Reference" "R41"
 			(at 41.91 132.08 90)
 			(effects
 				(font
@@ -2928,171 +2550,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 127 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "764fa015-983f-4b51-a862-67da24db64fb")
-		(property "Reference" "R22"
-			(at 52.07 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a2cc2dcb-d8e3-4900-a95a-5d35119633a3")
-		)
-		(pin "1"
-			(uuid "d280377b-496a-4d96-af8f-c66cc645e103")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 44.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7b256d0c-50d9-43ec-a224-5074476bb41b")
-		(property "Reference" "R17"
-			(at 52.07 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5b87b7a7-bf64-4ea5-847a-77acda8c296a")
-		)
-		(pin "1"
-			(uuid "d68da3a3-ed67-44e8-80ec-9582f28d1c36")
-		)
-		(instances
-			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R17")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R41")
 					(unit 1)
 				)
 			)
@@ -3106,8 +2566,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "838a9f28-e947-4030-af0d-3c011282fade")
-		(property "Reference" "R13"
+		(uuid "8258b97e-31ef-4689-8615-59b9d3015f28")
+		(property "Reference" "R48"
 			(at 43.18 110.49 90)
 			(effects
 				(font
@@ -3115,7 +2575,7 @@
 				)
 			)
 		)
-		(property "Value" "2K2"
+		(property "Value" "1k1"
 			(at 45.72 110.49 90)
 			(effects
 				(font
@@ -3159,10 +2619,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "1314b231-8555-41b7-bf79-62c4f0a06507")
+			(uuid "4eb1593f-3e62-472e-a2bc-e8820de25366")
 		)
 		(pin "1"
-			(uuid "9add8331-2703-4434-822e-c51ce29c5c40")
+			(uuid "2bd5e288-157b-4e3a-8543-79c18f50ea04")
 		)
 		(instances
 			(project "awg"
@@ -3171,90 +2631,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 110.49 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "88cf4e4e-327e-4c29-ae74-131adc530c76")
-		(property "Reference" "R21"
-			(at 52.07 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 110.49 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "53d24f64-42b0-4d01-a567-e94efeb64c4c")
-		)
-		(pin "1"
-			(uuid "893c6e74-c0a0-48bd-a29e-6c5afc11b9ac")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R21")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R21")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R48")
 					(unit 1)
 				)
 			)
@@ -3268,8 +2647,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8c321e72-c6ef-4ede-aaa7-1afd85e2c43d")
-		(property "Reference" "R15"
+		(uuid "9b604e12-7f74-4a5b-a62d-fb471e2b8f9d")
+		(property "Reference" "R50"
 			(at 43.18 143.51 90)
 			(effects
 				(font
@@ -3277,7 +2656,7 @@
 				)
 			)
 		)
-		(property "Value" "2K2"
+		(property "Value" "1k1"
 			(at 45.72 143.51 90)
 			(effects
 				(font
@@ -3321,10 +2700,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "7a9220d5-b8c3-4099-9981-f1354d0cea17")
+			(uuid "b0aeb953-98e2-4622-b27c-0b83e8dc38a5")
 		)
 		(pin "1"
-			(uuid "b0ede846-bae8-42b6-8942-4f6aa1d9b6c1")
+			(uuid "de3d6fc2-e949-4099-be82-9eb38f8f664b")
 		)
 		(instances
 			(project "awg"
@@ -3333,90 +2712,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 45.72 93.98 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "92c3ad49-4798-4952-a85a-1a5f0df726d6")
-		(property "Reference" "R12"
-			(at 43.18 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 45.72 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.498 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 45.72 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 45.72 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 45.72 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6869fa5b-c54c-4d30-98cc-3e9275af3623")
-		)
-		(pin "1"
-			(uuid "3e9f4bb2-a742-4598-a165-4421483904fe")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R12")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R12")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R50")
 					(unit 1)
 				)
 			)
@@ -3431,7 +2729,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a89344a6-8579-4d83-b0ed-d071d2abc938")
-		(property "Reference" "R1"
+		(property "Reference" "R35"
 			(at 41.91 33.02 90)
 			(effects
 				(font
@@ -3495,9 +2793,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R1")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R35")
 					(unit 1)
 				)
 			)
@@ -3513,7 +2811,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab745a45-3175-49f1-9557-abb4a7682011")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR048"
 			(at 69.85 49.53 0)
 			(effects
 				(font
@@ -3566,90 +2864,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 49.53 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b7340d4b-0a75-4df2-979f-52c405d56f72")
-		(property "Reference" "R20"
-			(at 52.07 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2K2"
-			(at 49.53 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.752 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 49.53 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "dd23f7b3-c9cb-4965-801b-7094372d7404")
-		)
-		(pin "1"
-			(uuid "cd38a908-2364-43df-91d5-a4b8bcae1786")
-		)
-		(instances
 			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R20")
-					(unit 1)
-				)
-			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R20")
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -3665,7 +2882,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c15ba0bf-bda0-443c-8508-ecbb3392079e")
-		(property "Reference" "TP1"
+		(property "Reference" "TP19"
 			(at 54.61 30.988 0)
 			(effects
 				(font
@@ -3719,27 +2936,33 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "TP19")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 45.72 77.47 180)
+		(at 45.72 93.98 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e7ed6f9d-09a0-4c0f-929d-dee02b9ae93b")
-		(property "Reference" "R11"
-			(at 43.18 77.47 90)
+		(uuid "d9f30a74-61f4-4daf-ab3d-579d0c782ef2")
+		(property "Reference" "R47"
+			(at 43.18 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "2K2"
-			(at 45.72 77.47 90)
+		(property "Value" "1k1"
+			(at 45.72 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3747,7 +2970,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 47.498 77.47 90)
+			(at 47.498 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3756,7 +2979,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 45.72 77.47 0)
+			(at 45.72 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3765,7 +2988,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 77.47 0)
+			(at 45.72 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3773,7 +2996,7 @@
 			)
 		)
 		(property "Reichelt Part-Number" "RND 1550805 CT"
-			(at 45.72 77.47 90)
+			(at 45.72 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3782,21 +3005,21 @@
 			)
 		)
 		(pin "2"
-			(uuid "25417d00-0cf0-4e07-8f87-3e0b8e5794a8")
+			(uuid "cac6a7ec-67eb-4857-a975-a2115bd55e3b")
 		)
 		(pin "1"
-			(uuid "218500c0-1f85-48ba-9fd0-b7adb2225a6e")
+			(uuid "3010894a-fa56-4122-9b55-83323fb7abbf")
 		)
 		(instances
 			(project "awg"
 				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "R11")
+					(reference "R12")
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R11")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R47")
 					(unit 1)
 				)
 			)
@@ -3811,7 +3034,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8d74d37-06a6-4127-beb7-84a8a21fe281")
-		(property "Reference" "R4"
+		(property "Reference" "R38"
 			(at 41.91 82.55 90)
 			(effects
 				(font
@@ -3875,9 +3098,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R4")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R38")
 					(unit 1)
 				)
 			)
@@ -3892,7 +3115,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e9d760c3-9298-4c96-a1b9-fa35cf350e26")
-		(property "Reference" "R9"
+		(property "Reference" "R44"
 			(at 43.18 44.45 90)
 			(effects
 				(font
@@ -3900,7 +3123,7 @@
 				)
 			)
 		)
-		(property "Value" "2K2"
+		(property "Value" "1k1"
 			(at 45.72 44.45 90)
 			(effects
 				(font
@@ -3956,9 +3179,9 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R9")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R44")
 					(unit 1)
 				)
 			)
@@ -3974,7 +3197,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f292e600-c4ed-4472-875f-29e9cdc25225")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR051"
 			(at 119.38 43.815 0)
 			(effects
 				(font
@@ -4027,6 +3250,12 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4039,7 +3268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f650ef41-0f68-44d9-a3b3-dced3edb4e08")
-		(property "Reference" "U1"
+		(property "Reference" "U6"
 			(at 125.095 41.5291 0)
 			(effects
 				(font
@@ -4104,6 +3333,12 @@
 					(unit 1)
 				)
 			)
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "U6")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -4115,7 +3350,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb2bd32e-e12b-4b4f-9083-0192a30ac528")
-		(property "Reference" "R3"
+		(property "Reference" "R37"
 			(at 41.91 66.04 90)
 			(effects
 				(font
@@ -4179,18 +3414,12 @@
 					(unit 1)
 				)
 			)
-			(project "parallax"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/2baced40-5255-44fd-a948-d0e30e6c5949"
-					(reference "R3")
+			(project "awg"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "R37")
 					(unit 1)
 				)
 			)
 		)
 	)
-	(sheet_instances
-		(path "/"
-			(page "1")
-		)
-	)
-	(embedded_fonts no)
 )

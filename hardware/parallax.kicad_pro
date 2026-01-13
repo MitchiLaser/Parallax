@@ -444,6 +444,7 @@
       "single_global_label": "ignore",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
@@ -635,6 +636,14 @@
     [
       "89a1e200-d02e-41b4-8035-131adfe663f2",
       "Analog Front-End"
+    ],
+    [
+      "230717d8-eff4-48e1-83ec-0a5479266f7b",
+      "Analog Front-End1"
+    ],
+    [
+      "32a91432-6d55-43e5-ae32-9b2a30085dc8",
+      "R2R-DAC"
     ]
   ],
   "text_variables": {}
