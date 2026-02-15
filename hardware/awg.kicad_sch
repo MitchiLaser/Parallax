@@ -375,10 +375,14 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
+		(symbol "power:+3V3"
 			(power)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -392,7 +396,7 @@
 					(hide yes)
 				)
 			)
-			(property "Value" "+5V"
+			(property "Value" "+3V3"
 				(at 0 3.556 0)
 				(effects
 					(font
@@ -418,7 +422,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
 				(at 0 0 0)
 				(effects
 					(font
@@ -436,7 +440,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "+3V3_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -474,12 +478,11 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "+3V3_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(hide yes)
-					(name "+5V"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1371,7 +1374,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "C19")
 					(unit 1)
@@ -1452,7 +1455,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R39")
 					(unit 1)
@@ -1536,7 +1539,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "C18")
 					(unit 1)
@@ -1554,7 +1557,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b79117c-3a12-4c1b-9cde-cd33f3592ccb")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR0105"
 			(at 38.1 165.1 0)
 			(effects
 				(font
@@ -1607,9 +1610,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "#PWR047")
+					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -1688,80 +1691,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R42")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 111.76 34.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "154209a8-9283-47b2-8ca6-3e0125b1106e")
-		(property "Reference" "#PWR049"
-			(at 111.76 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 111.76 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "93ce0d19-c625-4106-bcf0-ab65851d5976")
-		)
-		(instances
-			(project "awg"
-				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-			(project "awg"
-				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -1840,7 +1772,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R46")
 					(unit 1)
@@ -1921,7 +1853,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R36")
 					(unit 1)
@@ -2002,7 +1934,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R40")
 					(unit 1)
@@ -2020,7 +1952,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d80dc91-adfe-4ebb-8ba3-0c1adc6eebde")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR0102"
 			(at 111.76 59.69 0)
 			(effects
 				(font
@@ -2073,9 +2005,81 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "#PWR050")
+					(reference "#PWR0102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 111.76 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2e61ca8f-ce28-4357-a264-b25390a5fe86")
+		(property "Reference" "#PWR0101"
+			(at 111.76 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 111.76 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 111.76 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 111.76 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4b0689fa-a662-422e-90bf-23efd33244e7")
+		)
+		(instances
+			(project ""
+				(path "/59a76625-1b5a-43ec-8d7d-d1d9f9aa2be8"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+			(project "parallax"
+				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -2154,7 +2158,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R51")
 					(unit 1)
@@ -2235,7 +2239,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R43")
 					(unit 1)
@@ -2316,7 +2320,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R49")
 					(unit 1)
@@ -2397,7 +2401,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R45")
 					(unit 1)
@@ -2415,7 +2419,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5fab79e4-6862-4d09-b6b9-3f6eed4447e2")
-		(property "Reference" "TP20"
+		(property "Reference" "TP7"
 			(at 137.16 41.148 0)
 			(effects
 				(font
@@ -2469,9 +2473,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "TP20")
+					(reference "TP7")
 					(unit 1)
 				)
 			)
@@ -2550,7 +2554,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R41")
 					(unit 1)
@@ -2631,7 +2635,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R48")
 					(unit 1)
@@ -2712,7 +2716,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R50")
 					(unit 1)
@@ -2793,7 +2797,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R35")
 					(unit 1)
@@ -2811,7 +2815,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab745a45-3175-49f1-9557-abb4a7682011")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR0103"
 			(at 69.85 49.53 0)
 			(effects
 				(font
@@ -2864,9 +2868,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "#PWR048")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -2882,7 +2886,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c15ba0bf-bda0-443c-8508-ecbb3392079e")
-		(property "Reference" "TP19"
+		(property "Reference" "TP6"
 			(at 54.61 30.988 0)
 			(effects
 				(font
@@ -2936,9 +2940,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "TP19")
+					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -3017,7 +3021,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R47")
 					(unit 1)
@@ -3098,7 +3102,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R38")
 					(unit 1)
@@ -3179,7 +3183,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R44")
 					(unit 1)
@@ -3197,7 +3201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f292e600-c4ed-4472-875f-29e9cdc25225")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR0104"
 			(at 119.38 43.815 0)
 			(effects
 				(font
@@ -3250,9 +3254,9 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
-					(reference "#PWR051")
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -3333,7 +3337,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "U6")
 					(unit 1)
@@ -3414,7 +3418,7 @@
 					(unit 1)
 				)
 			)
-			(project "awg"
+			(project "parallax"
 				(path "/9be75e04-ffa7-400b-a6f6-98cbc4c2c88c/32a91432-6d55-43e5-ae32-9b2a30085dc8"
 					(reference "R37")
 					(unit 1)
@@ -3422,4 +3426,10 @@
 			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )

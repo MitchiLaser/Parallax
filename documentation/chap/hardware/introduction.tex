@@ -1,6 +1,6 @@
 \section{Introduction}
 
-This part explains how the measurement system's hardware works. It aims to make it clear why and how the hardware was designed. Basically, the hardware is meant to convert analog voltages with a high amplitude into smaller ones. Then, we can measure these smaller voltages using the PR2040 Microcontroller on the Raspberry Pi Pico Microcontroller board.
+This part explains how the measurement system's hardware works. It aims to make it clear why and how the hardware was designed. In General, the hardware is used to convert analog voltages with a high amplitude into smaller ones and maybe amplify them again if the input signal is too small. The input signal range is chosen to be symmetric for positive and negative amplitudes but the ADC can only measure positive voltages. Therefore, an offset is added to the input signal. Then, we can measure these voltages using the PR2040 Microcontroller on the Raspberry Pi Pico Microcontroller board.
 
 \subsection{Prerequisites}
 
@@ -8,7 +8,7 @@ Before we talk about how the analog front-end works and the different voltage ra
 
 \begin{itemize}
 	\item Understanding what Charge, Voltage, and Current are
-	\item Knowing about electrical resistance, Ohm's Law, and how resistors work
-	\item Learning about Capacitance and capacitors
+	\item Knowing about electrical resistance, Ohm's Law, and how resistors can be used in series and parallel configurations
+	\item Basic Knowledge about Capacitors
 	\item Knowing how to use a Diode and a Z-Diode
 \end{itemize}
