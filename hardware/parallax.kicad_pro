@@ -213,7 +213,9 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.25,
+        0.35
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -690,7 +692,7 @@
       {
         "filename": "parallax.kicad_sch",
         "name": "parallax",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "9be75e04-ffa7-400b-a6f6-98cbc4c2c88c"
       }
     ],
     "used_designators": "",
@@ -699,7 +701,7 @@
   "sheets": [
     [
       "9be75e04-ffa7-400b-a6f6-98cbc4c2c88c",
-      "Root"
+      "parallax"
     ],
     [
       "89a1e200-d02e-41b4-8035-131adfe663f2",
