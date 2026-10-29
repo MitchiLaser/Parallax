@@ -3483,7 +3483,7 @@
 	)
 	(global_label "MUL_2A"
 		(shape input)
-		(at 226.06 105.41 0)
+		(at 226.06 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3493,7 +3493,7 @@
 		)
 		(uuid "3021c1ce-1dd9-43b4-a6ad-e69a8d1baa0d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.1209 105.41 0)
+			(at 236.1209 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3579,7 +3579,7 @@
 	)
 	(global_label "MUL_2B"
 		(shape input)
-		(at 226.06 107.95 0)
+		(at 226.06 105.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3589,7 +3589,7 @@
 		)
 		(uuid "7798c5d4-b4cf-4626-98b8-c132c1003ad4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.3023 107.95 0)
+			(at 236.3023 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
